@@ -2,6 +2,14 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Word de la Etapa 1
+
+### Qué se hizo
+- Se generó `ETAPA-1-IDEA/ETAPA-1-IDEA.docx` con pandoc a partir del MD de la etapa (documento final listo para presentar).
+
+### Próximos pasos
+- Empezar Etapa 2: elegir y justificar la metodología (se prefiere Scrum).
+
 ## 2026-09-10 - Wireframes de la Etapa 1
 
 ### Qué se hizo
