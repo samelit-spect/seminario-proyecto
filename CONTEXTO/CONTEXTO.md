@@ -2,6 +2,17 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Etapa 2 (Metodología)
+
+### Qué se hizo
+- Se creó `ETAPA-2-METODOLOGIA/ETAPA-2-METODOLOGIA.md` comparando las metodologías de la cátedra (Waterfall, Prototipo, Incremental, Espiral, RAD, Scrum).
+- Se eligió **Scrum** con justificación (adaptabilidad, entregas regulares, grupo pequeño, requisitos poco definidos).
+- Se definieron roles (Product Owner, Scrum Master y Developer asumidos por el estudiante), 8 sprints asociados a las etapas de la cátedra y los artefactos usados.
+- Se generó el Word: `ETAPA-2-METODOLOGIA.docx` (pandoc).
+
+### Próximos pasos
+- Etapa 3: Diseño del sistema (arquitectura, hardware/software, base de datos, frontend/backend, seguridad, backup).
+
 ## 2026-09-10 - Word de la Etapa 1
 
 ### Qué se hizo
