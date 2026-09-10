@@ -1,7 +1,8 @@
-import { Suspense, lazy } from 'react'
+import { Suspense, lazy, useEffect, useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import Layout from './components/layout/Layout'
+import Preloader from './components/ui/Preloader'
 
 const Admin = lazy(() => import('./pages/Admin'))
 const Carrito = lazy(() => import('./pages/Carrito'))
@@ -15,8 +16,16 @@ const ProductoDetalle = lazy(() => import('./pages/ProductoDetalle'))
 const Registro = lazy(() => import('./pages/Registro'))
 
 function App() {
+  const [cargando, setCargando] = useState(true)
+
+  useEffect(() => {
+    const t = setTimeout(() => setCargando(false), 2600)
+    return () => clearTimeout(t)
+  }, [])
+
   return (
     <BrowserRouter>
+      {cargando && <Preloader />}
       <Suspense
         fallback={
           <div className="flex h-screen items-center justify-center bg-cream">

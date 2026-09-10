@@ -2,6 +2,20 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Mejora visual 3: Preloader animado
+
+### Qué se hizo
+- Creado `src/components/ui/Preloader.tsx`: pantalla de carga inicial a pantalla completa.
+  - Fondo oscuro (`bg-onix`) con el logo TechStore en un círculo con degradado de madera.
+  - Doble anillo giratorio con `animate-spin` (velocidades distintas) alrededor del logo.
+  - Texto "TechStore" y "Tecnología esencial" que se revelan con `animate-fade-up`.
+  - Fade-out suave a los 1.4s y se desmonta del DOM a los 2.1s.
+- Integrado en `App.tsx`: se muestra `{cargando && <Preloader />}` al montar la app y se retira a los 2.6s (solo en la carga inicial, no en navegación).
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Mejora visual 4 (consultar al usuario antes de avanzar).
+
 ## 2026-09-10 - Mejora visual 2: Animaciones al scrollear
 
 ### Qué se hizo
