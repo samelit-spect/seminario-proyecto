@@ -2,6 +2,19 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Etapa 4: Detalle de producto y página Nosotros
+
+### Qué se hizo
+- Creada página **ProductoDetalle** (`/producto/:id`): galería con selector de imágenes, breadcrumb, selector de cantidad, estado de stock, garantías, reseñas y productos relacionados.
+- Creada página **Nosotros** (`/nosotros`): hero oscuro, misión con imagen, valores y CTA de contacto.
+- El catálogo ahora recibe `?categoria=` desde la URL (usado por los links de "Ver categoría").
+- Rutas actualizadas en `App.tsx`.
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Contextos: **AuthContext** (autenticación) y **CartContext** (carrito con localStorage).
+- Páginas Login/Registro y Carrito con checkout.
+
 ## 2026-09-10 - Etapa 4: Layout y Home con diseño elegancia (blanco/madera/negro)
 
 ### Qué se hizo

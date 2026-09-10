@@ -1,12 +1,22 @@
 import { useMemo, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 
 import ProductCard from '../components/products/ProductCard'
 import { categorias, productosDemo } from '../data/productos'
 
 export default function Catalogo() {
-  const [filtro, setFiltro] = useState('Todas')
+  const [searchParams, setSearchParams] = useSearchParams()
+  const [filtro, setFiltro] = useState(
+    searchParams.get('categoria') ?? 'Todas'
+  )
   const [busqueda, setBusqueda] = useState('')
   const [maxPrecio, setMaxPrecio] = useState(2000000)
+
+  const cambiarCategoria = (cat: string) => {
+    setFiltro(cat)
+    if (cat === 'Todas') setSearchParams({})
+    else setSearchParams({ categoria: cat })
+  }
 
   const productos = useMemo(() => {
     return productosDemo.filter((p) => {
@@ -48,7 +58,7 @@ export default function Catalogo() {
               {['Todas', ...categorias].map((c) => (
                 <button
                   key={c}
-                  onClick={() => setFiltro(c)}
+                  onClick={() => cambiarCategoria(c)}
                   className={`rounded-full px-4 py-2 text-sm transition-all duration-300 ${
                     filtro === c
                       ? 'bg-coal-950 text-cream shadow-md'
