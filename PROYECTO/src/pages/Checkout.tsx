@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { useCart } from '../context/CartContext'
 import Breadcrumb from '../components/ui/Breadcrumb'
+import CuponInput from '../components/ui/CuponInput'
 import Reveal from '../components/ui/Reveal'
 import { guardarPedido } from '../services/pedidosService'
 
@@ -10,7 +11,7 @@ const precioFormateado = (n: number) =>
   '$' + n.toLocaleString('es-AR')
 
 export default function Checkout() {
-  const { items, total, vaciar } = useCart()
+  const { items, total, totalConDescuento, descuento, cupon, vaciar } = useCart()
   const [confirmado, setConfirmado] = useState(false)
   const [numPedido, setNumPedido] = useState('')
   const [emailEnviado, setEmailEnviado] = useState('')
@@ -46,7 +47,7 @@ export default function Checkout() {
         precio: i.producto.precio,
         cantidad: i.cantidad,
       })),
-      total,
+total: totalConDescuento,
       estado: 'Pendiente',
       datosEnvio: {
         nombres: form.nombres,
@@ -223,18 +224,26 @@ export default function Checkout() {
                 <span>Subtotal</span>
                 <span className="font-medium text-coal-950">{precioFormateado(total)}</span>
               </div>
+              {descuento > 0 && (
+                <div className="flex justify-between text-emerald-600">
+                  <span>Descuento {cupon && `(${cupon.cupon.codigo})`}</span>
+                  <span className="font-medium">−{precioFormateado(descuento)}</span>
+                </div>
+              )}
               <div className="flex justify-between">
                 <span>Envío</span>
                 <span className="font-medium text-wood-700">A convenir</span>
               </div>
             </div>
 
-            <div className="my-4 border-t border-wood-100" />
+            <div className="my-5 border-t border-wood-100 pt-5">
+              <CuponInput />
+            </div>
 
             <div className="flex items-center justify-between">
               <span className="font-medium text-coal-950">Total</span>
               <span className="font-display text-3xl font-bold text-wood-700">
-                {precioFormateado(total)}
+                {precioFormateado(totalConDescuento)}
               </span>
             </div>
 

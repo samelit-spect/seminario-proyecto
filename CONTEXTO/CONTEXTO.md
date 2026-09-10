@@ -2,6 +2,18 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Mejora visual 11: Cupones de descuento
+
+### Qué se hizo
+- CartContext ampliado: `cupon`, `aplicarCupon()`, `quitarCupon()`, `descuento` y `totalConDescuento`; cupón persistido en localStorage (`techstore_cupon`).
+- Registro de cupones válidos: `BIENVENIDO10` (10%), `TECNOSTORE15` (15%) y `AHORRO5K` ($5.000 fijo).
+- Creado `src/components/ui/CuponInput.tsx`: campo con aplicado (estado verde con "Quitar") y mensaje de código inválido.
+- Integrado en Carrito y Checkout (descuento visible en el resumen; el total guardado en el pedido y el del drawer usan `totalConDescuento`).
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Mejora visual 12 (consultar al usuario antes de avanzar).
+
 ## 2026-09-10 - Mejora visual 10: Email de confirmación simulado
 
 ### Qué se hizo

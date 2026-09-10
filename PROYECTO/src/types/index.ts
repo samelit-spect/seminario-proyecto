@@ -52,3 +52,16 @@ export interface Categoria {
   nombre: string
   icono: string
 }
+
+export type TipoCupon = 'porcentaje' | 'fijo'
+
+export interface Cupon {
+  codigo: string
+  tipo: TipoCupon
+  valor: number
+  descripcion: string
+}
+
+export interface CuponAplicado {
+  cupon: Cupon
+}

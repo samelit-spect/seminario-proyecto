@@ -7,7 +7,7 @@ const precioFormateado = (n: number) =>
   '$' + n.toLocaleString('es-AR')
 
 export default function CartDrawer() {
-  const { items, total, cerrarDrawer, drawerAbierto, cambiarCantidad, quitar } = useCart()
+  const { items, totalConDescuento, cerrarDrawer, drawerAbierto, cambiarCantidad, quitar } = useCart()
   const { pathname } = useLocation()
 
   // Bloquea scroll del body mientras está abierto
@@ -141,7 +141,7 @@ export default function CartDrawer() {
               <div className="flex items-center justify-between">
                 <span className="text-sm text-coal-50">Total</span>
                 <span className="font-display text-2xl font-bold text-wood-700">
-                  {precioFormateado(total)}
+                  {precioFormateado(totalConDescuento)}
                 </span>
               </div>
               <Link

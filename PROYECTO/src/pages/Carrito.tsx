@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import Breadcrumb from '../components/ui/Breadcrumb'
+import CuponInput from '../components/ui/CuponInput'
 import Reveal from '../components/ui/Reveal'
 import { useCart } from '../context/CartContext'
 
@@ -8,7 +9,8 @@ const precioFormateado = (n: number) =>
   '$' + n.toLocaleString('es-AR')
 
 export default function Carrito() {
-  const { items, cantidadTotal, total, cambiarCantidad, quitar, vaciar } = useCart()
+  const { items, cantidadTotal, total, totalConDescuento, descuento, cupon, cambiarCantidad, quitar, vaciar } =
+    useCart()
 
   if (items.length === 0) {
     return (
@@ -133,18 +135,26 @@ export default function Carrito() {
                 <span>Subtotal</span>
                 <span className="font-medium text-coal-950">{precioFormateado(total)}</span>
               </div>
+              {descuento > 0 && (
+                <div className="flex justify-between text-emerald-600">
+                  <span>Descuento {cupon && `(${cupon.cupon.codigo})`}</span>
+                  <span className="font-medium">−{precioFormateado(descuento)}</span>
+                </div>
+              )}
               <div className="flex justify-between">
                 <span>Envío</span>
                 <span className="text-wood-700 font-medium">Calculado en el checkout</span>
               </div>
             </div>
 
-            <div className="my-5 border-t border-wood-100" />
+            <div className="my-5 space-y-4 border-t border-wood-100 pt-5">
+              <CuponInput />
+            </div>
 
             <div className="flex items-center justify-between">
               <span className="text-coal-950">Total</span>
               <span className="font-display text-3xl font-bold text-wood-700">
-                {precioFormateado(total)}
+                {precioFormateado(totalConDescuento)}
               </span>
             </div>
 
