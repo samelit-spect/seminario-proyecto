@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import ProductCard from '../components/products/ProductCard'
+import FAQ from '../components/ui/FAQ'
 import Marcas from '../components/ui/Marcas'
 import Parallax from '../components/ui/Parallax'
 import Reveal from '../components/ui/Reveal'
@@ -136,6 +137,9 @@ export default function Home() {
 
       {/* ===== Testimonios ===== */}
       <Testimonios />
+
+      {/* ===== FAQ ===== */}
+      <FAQ />
 
       {/* ===== CTA final ===== */}
       <section className="relative overflow-hidden bg-onix py-24 text-center text-chalk">

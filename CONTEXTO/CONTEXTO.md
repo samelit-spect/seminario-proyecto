@@ -2,6 +2,17 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Mejora visual 14: FAQ
+
+### Qué se hizo
+- Creado `src/components/ui/FAQ.tsx`: acordeón de preguntas frecuentes (5 preguntas sobre pagos, envíos, garantía, cancelaciones y originalidad) con transición suave de altura (`grid-rows`), chevron rotatorio y primera respuesta abierta por defecto.
+- Insertado en la Home entre Testimonios y el CTA final.
+- Componente reutilizable (acepta prop `titulo`).
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Mejora visual 15 (consultar al usuario antes de avanzar).
+
 ## 2026-09-10 - Mejora visual 13: Marcas
 
 ### Qué se hizo
