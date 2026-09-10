@@ -15,7 +15,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const { pathname } = useLocation()
-  const { cantidadTotal } = useCart()
+  const { cantidadTotal, abrirDrawer } = useCart()
   const { usuario, cargando, logout } = useAuth()
   const { oscuro, alternar } = useTheme()
 
@@ -81,10 +81,10 @@ export default function Navbar() {
             </svg>
           </button>
 
-          <Link
-            to="/carrito"
+          <button
+            onClick={abrirDrawer}
             className="relative rounded-full p-2 text-chalk/80 transition-all duration-300 hover:bg-chalk/10 hover:text-chalk"
-            aria-label="Carrito"
+            aria-label="Abrir carrito"
           >
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -94,7 +94,7 @@ export default function Navbar() {
                 {cantidadTotal}
               </span>
             )}
-          </Link>
+          </button>
           {usuario ? (
             <div className="group relative">
               <button

@@ -2,6 +2,22 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Mejora visual 9: Mini-drawer de carrito
+
+### Qué se hizo
+- Creado `src/components/layout/CartDrawer.tsx`: panel lateral deslizante (derecha) con el carrito.
+  - Header con título y botón cerrar; lista de items con imagen, nombre, cantidad (+/−), subtotal y eliminar.
+  - Estado vacío con CTA "Explorar catálogo"; pie con total, botón "Finalizar compra" y "Ver carrito completo".
+  - Backdrop oscuro con blur, cierre por clic fuera, bloqueo de scroll del body y cierre automático al navegar.
+  - Transición con `cubic-bezier` suave al abrir/cerrar.
+- `CartContext`: agregado estado `drawerAbierto` + `abrirDrawer`/`cerrarDrawer`; al hacer `agregar()` se abre el drawer automáticamente.
+- Navbar: el icono de carrito ahora abre el drawer (en vez de navegar directo).
+- Montado en `Layout.tsx` (disponible en todo el sitio).
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Mejora visual 10 (consultar al usuario antes de avanzar).
+
 ## 2026-09-10 - Mejora visual 8: Breadcrumbs en todas las páginas
 
 ### Qué se hizo

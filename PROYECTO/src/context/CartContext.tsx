@@ -10,6 +10,9 @@ interface CartContextValue {
   quitar: (productoId: string) => void
   cambiarCantidad: (productoId: string, cantidad: number) => void
   vaciar: () => void
+  drawerAbierto: boolean
+  abrirDrawer: () => void
+  cerrarDrawer: () => void
 }
 
 const CartContext = createContext<CartContextValue | null>(null)
@@ -25,6 +28,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       return []
     }
   })
+  const [drawerAbierto, setDrawerAbierto] = useState(false)
 
   // Persistencia en localStorage
   useEffect(() => {
@@ -43,6 +47,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       }
       return [...prev, { producto, cantidad }]
     })
+    setDrawerAbierto(true)
   }
 
   const quitar = (productoId: string) => {
@@ -66,8 +71,19 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const value = useMemo<CartContextValue>(() => {
     const cantidadTotal = items.reduce((acc, i) => acc + i.cantidad, 0)
     const total = items.reduce((acc, i) => acc + i.producto.precio * i.cantidad, 0)
-    return { items, cantidadTotal, total, agregar, quitar, cambiarCantidad, vaciar }
-  }, [items])
+    return {
+      items,
+      cantidadTotal,
+      total,
+      agregar,
+      quitar,
+      cambiarCantidad,
+      vaciar,
+      drawerAbierto,
+      abrirDrawer: () => setDrawerAbierto(true),
+      cerrarDrawer: () => setDrawerAbierto(false),
+    }
+  }, [items, drawerAbierto])
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>
 }
