@@ -39,7 +39,7 @@ export default function Login() {
   }
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-coal-950 px-6 pt-24">
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-onix px-6 pt-24">
       <div className="absolute inset-0 bg-grain opacity-40" />
       <div className="absolute -left-16 top-1/4 h-72 w-72 animate-float rounded-full bg-wood-700/30 blur-3xl" />
       <div className="absolute -right-16 bottom-1/4 h-72 w-72 rounded-full bg-wood-500/20 blur-3xl" />
@@ -97,7 +97,7 @@ export default function Login() {
             <button
               type="submit"
               disabled={cargando}
-              className="w-full rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-7 py-3.5 font-medium text-cream shadow-lg shadow-wood-900/20 transition-all duration-300 hover:shadow-xl hover:brightness-110 disabled:opacity-60"
+              className="w-full rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-7 py-3.5 font-medium text-chalk shadow-lg shadow-wood-900/20 transition-all duration-300 hover:shadow-xl hover:brightness-110 disabled:opacity-60"
             >
               {cargando ? 'Ingresando...' : 'Ingresar'}
             </button>

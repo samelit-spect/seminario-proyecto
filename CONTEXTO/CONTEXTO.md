@@ -2,6 +2,25 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Mejora visual 1: Modo oscuro/claro
+
+### Qué se hizo
+- Implementado **modo oscuro/claro** con toggle en la Navbar y persistencia en localStorage (`techstore_theme`, sigue la preferencia del sistema por defecto).
+- Nuevo hook `src/hooks/useTheme.ts`: aplica/remueve la clase `dark` en `<html>`.
+- CSS:
+  - `@custom-variant dark` (dark mode por clase en Tailwind v4).
+  - Overrides de variables de color en `.dark` para que las superficies claras se inviertan automáticamente (cream, white, coal, wood).
+  - Nuevos tokens "fijos" que no cambian con el tema: `--color-onix` (fondos siempre oscuros: hero, footer, navbar, login) y `--color-chalk` (texto siempre claro sobre esos fondos).
+  - Transición suave de colores al cambiar de tema.
+- Reemplazados `bg-coal-950`/`text-cream` en secciones "siempre oscuras" por `bg-onix`/`text-chalk` en: Navbar, Footer, Home (hero, CTA), Nosotros, Login, Registro, Checkout (confirmación), Admin (sidebar activo), Catalogo (categoría activa), ProductCard, ProductoDetalle, ProductoForm.
+- Botones con gradiente de madera usan `text-chalk` para conservar contraste en ambos temas.
+- Badge "inactivo" del Admin con variante `dark:` explícita.
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Mejora visual 2: animaciones al scrollear con Intersection Observer.
+- Luego el resto de mejoras visuales de a una por vez, con commit y confirmación antes de avanzar.
+
 ## 2026-09-10 - Etapa 4: Panel de administración
 
 ### Qué se hizo

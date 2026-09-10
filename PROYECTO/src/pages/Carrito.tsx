@@ -23,7 +23,7 @@ export default function Carrito() {
           </p>
           <Link
             to="/catalogo"
-            className="mt-8 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-7 py-3.5 font-medium text-cream shadow-lg shadow-wood-900/20 transition-all duration-300 hover:shadow-xl hover:brightness-110"
+            className="mt-8 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-7 py-3.5 font-medium text-chalk shadow-lg shadow-wood-900/20 transition-all duration-300 hover:shadow-xl hover:brightness-110"
           >
             Ver catálogo
             <span>→</span>
@@ -147,7 +147,7 @@ export default function Carrito() {
 
             <Link
               to="/checkout"
-              className="group mt-7 flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-7 py-3.5 font-medium text-cream shadow-lg shadow-wood-900/20 transition-all duration-300 hover:shadow-xl hover:brightness-110"
+              className="group mt-7 flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-7 py-3.5 font-medium text-chalk shadow-lg shadow-wood-900/20 transition-all duration-300 hover:shadow-xl hover:brightness-110"
             >
               Finalizar compra
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>

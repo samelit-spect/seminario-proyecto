@@ -60,7 +60,7 @@ export default function ProductoDetalle() {
                 alt={producto.nombre}
                 className="h-[480px] w-full animate-zoom-in object-cover"
               />
-              <span className="absolute left-4 top-4 rounded-full bg-coal-950/70 px-4 py-1.5 text-xs font-medium text-cream backdrop-blur-sm">
+              <span className="absolute left-4 top-4 rounded-full bg-onix/70 px-4 py-1.5 text-xs font-medium text-chalk backdrop-blur-sm">
                 {producto.marca}
               </span>
             </div>
@@ -131,7 +131,7 @@ export default function ProductoDetalle() {
 
               <button
                 onClick={handleAgregar}
-                className={`group inline-flex flex-1 items-center justify-center gap-3 rounded-full px-8 py-3.5 font-medium text-cream shadow-lg transition-all duration-300 hover:shadow-xl sm:flex-none ${
+                className={`group inline-flex flex-1 items-center justify-center gap-3 rounded-full px-8 py-3.5 font-medium text-chalk shadow-lg transition-all duration-300 hover:shadow-xl sm:flex-none ${
                   agregado
                     ? 'bg-emerald-600'
                     : 'bg-gradient-to-r from-wood-500 to-wood-700 hover:brightness-110'

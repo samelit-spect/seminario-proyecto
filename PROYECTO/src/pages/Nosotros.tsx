@@ -10,7 +10,7 @@ export default function Nosotros() {
   return (
     <div className="bg-cream">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-coal-950 pb-24 pt-40 text-cream">
+      <section className="relative overflow-hidden bg-onix pb-24 pt-40 text-chalk">
         <div className="absolute inset-0 bg-grain opacity-40" />
         <div className="absolute right-0 top-0 h-80 w-80 animate-float rounded-full bg-wood-700/30 blur-3xl" />
         <div className="relative z-10 mx-auto max-w-7xl px-6">
@@ -18,7 +18,7 @@ export default function Nosotros() {
           <h1 className="mt-4 max-w-3xl animate-fade-up font-display text-5xl leading-tight md:text-6xl" style={{ animationDelay: '120ms' }}>
             Tecnología con <span className="text-gradient italic">alma</span> y diseño
           </h1>
-          <p className="mt-6 max-w-xl animate-fade-up text-cream/70 md:text-lg" style={{ animationDelay: '240ms' }}>
+          <p className="mt-6 max-w-xl animate-fade-up text-chalk/70 md:text-lg" style={{ animationDelay: '240ms' }}>
             TechStore nació en Tinogasta con una idea simple: acercar tecnología de calidad a nuestra comunidad, con un trato cercano y una estética que refleja el buen gusto.
           </p>
         </div>
@@ -46,7 +46,7 @@ export default function Nosotros() {
           </p>
           <Link
             to="/catalogo"
-            className="mt-8 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-7 py-3.5 font-medium text-cream shadow-lg shadow-wood-900/20 transition-all duration-300 hover:shadow-xl hover:brightness-110"
+            className="mt-8 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-7 py-3.5 font-medium text-chalk shadow-lg shadow-wood-900/20 transition-all duration-300 hover:shadow-xl hover:brightness-110"
           >
             Ver nuestros productos
             <span>→</span>
@@ -66,7 +66,7 @@ export default function Nosotros() {
                 key={v.t}
                 className="group rounded-2xl border border-wood-100 bg-cream p-8 text-center transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-wood-900/10"
               >
-                <span className="mx-auto flex h-16 w-16 animate-fade-up items-center justify-center rounded-full bg-gradient-to-br from-wood-300 to-wood-700 text-cream shadow-md transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
+                <span className="mx-auto flex h-16 w-16 animate-fade-up items-center justify-center rounded-full bg-gradient-to-br from-wood-300 to-wood-700 text-chalk shadow-md transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
                   <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d={v.icon} />
                   </svg>
@@ -87,7 +87,7 @@ export default function Nosotros() {
         </p>
         <a
           href="mailto:ventas@techstore.com"
-          className="mt-8 inline-block rounded-full bg-coal-950 px-8 py-4 font-medium text-cream shadow-lg transition-all duration-300 hover:bg-wood-700 hover:shadow-xl"
+          className="mt-8 inline-block rounded-full bg-onix px-8 py-4 font-medium text-chalk shadow-lg transition-all duration-300 hover:bg-wood-700 hover:shadow-xl"
         >
           Contactanos
         </a>

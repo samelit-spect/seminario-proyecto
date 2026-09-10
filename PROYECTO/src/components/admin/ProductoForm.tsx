@@ -70,7 +70,7 @@ export default function ProductoForm({ producto, onGuardar, onCerrar }: Props) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-coal-950/60 p-4 backdrop-blur-sm" onClick={onCerrar}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-onix/60 p-4 backdrop-blur-sm" onClick={onCerrar}>
       <div
         className="max-h-[90vh] w-full max-w-lg animate-zoom-in overflow-y-auto rounded-3xl bg-white p-8 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
@@ -143,7 +143,7 @@ export default function ProductoForm({ producto, onGuardar, onCerrar }: Props) {
           <div className="flex gap-3 pt-2">
             <button
               type="submit"
-              className="flex-1 rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-7 py-3 font-medium text-cream shadow-lg shadow-wood-900/20 transition-all duration-300 hover:shadow-xl hover:brightness-110"
+              className="flex-1 rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-7 py-3 font-medium text-chalk shadow-lg shadow-wood-900/20 transition-all duration-300 hover:shadow-xl hover:brightness-110"
             >
               {producto ? 'Guardar cambios' : 'Crear producto'}
             </button>

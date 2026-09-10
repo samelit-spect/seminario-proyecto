@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
 @import 'tailwindcss';
 
+/* Dark mode por clase (toggle manual, no por preferencia del sistema) */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ===== Paleta elegancia: blanco, madera, negro ===== */
 @theme {
   --font-display: 'Playfair Display', Georgia, serif;
   --font-sans: 'Inter', system-ui, sans-serif;
 
   --color-cream: #faf7f2;
-  --color-cream-100: #f5efe6;
-  --color-cream-200: #ece2d3;
+  --color-cream-50: #f5efe6;
+  --color-cream-100: #ede3d2;
+  --color-cream-200: #e0d1ba;
 
   --color-wood-100: #e7d6bf;
   --color-wood-300: #c9a37a;
@@ -17,9 +21,13 @@
   --color-wood-700: #6f4827;
   --color-wood-900: #3e2a18;
 
-  --color-coal-50: #3a3a3c;
+  --color-coal-50: #6b6b6e;
   --color-coal-900: #171719;
   --color-coal-950: #0e0e10;
+
+  /* Tokens "fijos": no cambian con el tema (superficies oscuras) */
+  --color-onix: #0a0a0c;
+  --color-chalk: #faf7f2;
 
   --animate-fade-up: fade-up 0.7s ease both;
   --animate-fade-in: fade-in 0.9s ease both;
@@ -51,6 +59,28 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ===== Modo oscuro: las superficies claras se invierten automáticamente ===== */
+.dark {
+  color-scheme: dark;
+  --color-cream: #131316;
+  --color-cream-50: #1b1b1f;
+  --color-cream-100: #232329;
+  --color-cream-200: #2e2e36;
+
+  --color-wood-100: #34343c;
+  --color-wood-300: #d4ac7e;
+  --color-wood-500: #b98a5a;
+  --color-wood-600: #c99c6a;
+  --color-wood-700: #d8b088;
+  --color-wood-900: #e7cfae;
+
+  --color-coal-50: #b6b4b0;
+  --color-coal-900: #e6e2dc;
+  --color-coal-950: #f4f1ec;
+
+  --color-white: #1c1c22;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -74,6 +104,12 @@ body {
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-wood-600); }
+
+/* Transición suave al cambiar de tema */
+html.theme-anim,
+html.theme-anim * {
+  transition: background-color 0.4s ease, border-color 0.4s ease, color 0.3s ease;
+}
 
 /* Utilidad: degradado de texto dorado/madera */
 .text-gradient {

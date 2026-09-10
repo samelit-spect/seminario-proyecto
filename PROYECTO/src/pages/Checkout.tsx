@@ -65,7 +65,7 @@ export default function Checkout() {
   // Pantalla de confirmación
   if (confirmado) {
     return (
-      <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-coal-950 px-6 pt-24">
+      <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-onix px-6 pt-24">
         <div className="absolute inset-0 bg-grain opacity-40" />
         <div className="absolute -left-16 top-1/4 h-72 w-72 animate-float rounded-full bg-wood-700/30 blur-3xl" />
         <div className="absolute -right-16 bottom-1/4 h-72 w-72 rounded-full bg-wood-500/20 blur-3xl" />
@@ -89,7 +89,7 @@ export default function Checkout() {
           <div className="mt-8 flex flex-col gap-3">
             <Link
               to="/catalogo"
-              className="rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-7 py-3.5 font-medium text-cream shadow-lg shadow-wood-900/20 transition-all duration-300 hover:shadow-xl hover:brightness-110"
+              className="rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-7 py-3.5 font-medium text-chalk shadow-lg shadow-wood-900/20 transition-all duration-300 hover:shadow-xl hover:brightness-110"
             >
               Seguir comprando
             </Link>
@@ -119,7 +119,7 @@ export default function Checkout() {
           <div className="space-y-8 lg:col-span-2">
             <section className="animate-fade-up rounded-2xl border border-wood-100 bg-white p-7">
               <h2 className="mb-5 flex items-center gap-3 font-display text-2xl text-coal-950">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-coal-950 text-sm font-bold text-cream">1</span>
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-onix text-sm font-bold text-chalk">1</span>
                 Datos personales
               </h2>
               <div className="grid gap-4 sm:grid-cols-2">
@@ -132,7 +132,7 @@ export default function Checkout() {
 
             <section className="animate-fade-up rounded-2xl border border-wood-100 bg-white p-7" style={{ animationDelay: '100ms' }}>
               <h2 className="mb-5 flex items-center gap-3 font-display text-2xl text-coal-950">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-coal-950 text-sm font-bold text-cream">2</span>
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-onix text-sm font-bold text-chalk">2</span>
                 Dirección de envío
               </h2>
               <div className="grid gap-4 sm:grid-cols-2">
@@ -145,7 +145,7 @@ export default function Checkout() {
 
             <section className="animate-fade-up rounded-2xl border border-wood-100 bg-white p-7" style={{ animationDelay: '200ms' }}>
               <h2 className="mb-5 flex items-center gap-3 font-display text-2xl text-coal-950">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-coal-950 text-sm font-bold text-cream">3</span>
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-onix text-sm font-bold text-chalk">3</span>
                 Forma de pago
               </h2>
               <div className="space-y-3">
@@ -217,7 +217,7 @@ export default function Checkout() {
             <button
               type="submit"
               disabled={enviando || items.length === 0}
-              className="mt-7 w-full rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-7 py-3.5 font-medium text-cream shadow-lg shadow-wood-900/20 transition-all duration-300 hover:shadow-xl hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
+              className="mt-7 w-full rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-7 py-3.5 font-medium text-chalk shadow-lg shadow-wood-900/20 transition-all duration-300 hover:shadow-xl hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
             >
               {enviando ? 'Confirmando pedido...' : 'Confirmar pedido'}
             </button>

@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div>
       {/* ===== Hero ===== */}
-      <section className="relative flex min-h-screen items-center overflow-hidden bg-coal-950 text-cream">
+      <section className="relative flex min-h-screen items-center overflow-hidden bg-onix text-chalk">
         <div className="absolute inset-0 bg-grain opacity-40" />
         <div className="absolute -left-24 top-1/4 h-96 w-96 animate-float rounded-full bg-wood-700/40 blur-3xl" />
         <div className="absolute -right-16 bottom-1/4 h-80 w-80 rounded-full bg-wood-500/20 blur-3xl" />
@@ -28,7 +28,7 @@ export default function Home() {
               <br />
               en un solo lugar
             </h1>
-            <p className="mt-6 max-w-md animate-fade-up text-cream/70 md:text-lg" style={{ animationDelay: '240ms' }}>
+            <p className="mt-6 max-w-md animate-fade-up text-chalk/70 md:text-lg" style={{ animationDelay: '240ms' }}>
               Descubrí una selección curada de productos de electrónica con diseño premium, calidad garantizada y atención personalizada.
             </p>
             <div className="mt-9 flex animate-fade-up items-center gap-4" style={{ animationDelay: '360ms' }}>
@@ -41,7 +41,7 @@ export default function Home() {
               </Link>
               <Link
                 to="/nosotros"
-                className="text-sm text-cream/70 underline-offset-4 transition-colors duration-300 hover:text-cream hover:underline"
+                className="text-sm text-chalk/70 underline-offset-4 transition-colors duration-300 hover:text-chalk hover:underline"
               >
                 Conocé más
               </Link>
@@ -56,14 +56,14 @@ export default function Home() {
                 className="h-[520px] w-full object-cover transition-transform duration-[1.5s] hover:scale-105"
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 animate-fade-up rounded-2xl bg-cream px-6 py-4 text-coal-950 shadow-2xl" style={{ animationDelay: '500ms' }}>
+            <div className="absolute -bottom-6 -left-6 animate-fade-up rounded-2xl bg-chalk px-6 py-4 text-onix shadow-2xl" style={{ animationDelay: '500ms' }}>
               <p className="font-display text-2xl font-bold text-wood-700">+450</p>
               <p className="text-sm text-coal-50">clientes satisfechos</p>
             </div>
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float text-cream/40">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float text-chalk/40">
           <svg className="h-6 w-6 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
           </svg>
@@ -83,7 +83,7 @@ export default function Home() {
               className="group flex animate-fade-up items-start gap-4"
               style={{ animationDelay: `${i * 120}ms` }}
             >
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-wood-300 to-wood-600 text-cream shadow-md transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-wood-300 to-wood-600 text-chalk shadow-md transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d={f.icon} />
                 </svg>
@@ -124,7 +124,7 @@ export default function Home() {
         <div className="mt-10 text-center sm:hidden">
           <Link
             to="/catalogo"
-            className="inline-flex items-center gap-2 rounded-full bg-coal-950 px-6 py-3 text-sm font-medium text-cream transition-all hover:bg-wood-700"
+            className="inline-flex items-center gap-2 rounded-full bg-onix px-6 py-3 text-sm font-medium text-chalk transition-all hover:bg-wood-700"
           >
             Ver todos los productos →
           </Link>
@@ -132,14 +132,14 @@ export default function Home() {
       </section>
 
       {/* ===== CTA final ===== */}
-      <section className="relative overflow-hidden bg-coal-950 py-24 text-center text-cream">
+      <section className="relative overflow-hidden bg-onix py-24 text-center text-chalk">
         <div className="absolute inset-0 bg-grain opacity-40" />
         <div className="absolute left-1/4 top-0 h-64 w-64 animate-float rounded-full bg-wood-700/30 blur-3xl" />
         <div className="relative z-10 mx-auto max-w-2xl animate-fade-up px-6">
           <h2 className="font-display text-4xl md:text-5xl">
             ¿Listo para <span className="text-gradient italic">renovar</span> tu tecnología?
           </h2>
-          <p className="mt-4 text-cream/70">
+          <p className="mt-4 text-chalk/70">
             Comprá online con retiro en el local o envío a tu puerta.
           </p>
           <Link

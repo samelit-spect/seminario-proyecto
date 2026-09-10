@@ -92,7 +92,7 @@ export default function Admin() {
                   onClick={() => setVista(m.id)}
                   className={`flex shrink-0 items-center gap-3 rounded-xl px-5 py-3 text-sm font-medium transition-all duration-300 ${
                     vista === m.id
-                      ? 'bg-coal-950 text-cream shadow-lg'
+                      ? 'bg-onix text-chalk shadow-lg'
                       : 'bg-white text-coal-50 border border-wood-100 hover:border-wood-500 hover:text-coal-950'
                   }`}
                 >
@@ -197,7 +197,7 @@ export default function Admin() {
                   <h2 className="font-display text-2xl text-coal-950">Productos ({productos.length})</h2>
                   <button
                     onClick={() => setModal({ abierto: true })}
-                    className="rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-5 py-2.5 text-sm font-medium text-cream shadow-lg shadow-wood-900/20 transition-all duration-300 hover:shadow-xl hover:brightness-110"
+                    className="rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-5 py-2.5 text-sm font-medium text-chalk shadow-lg shadow-wood-900/20 transition-all duration-300 hover:shadow-xl hover:brightness-110"
                   >
                     + Nuevo producto
                   </button>
@@ -232,7 +232,7 @@ export default function Admin() {
                             </span>
                           </td>
                           <td className="px-5 py-3">
-                            <span className={`rounded-full px-3 py-1 text-xs font-semibold ${p.activo ? 'bg-emerald-50 text-emerald-700' : 'bg-coal-50 text-coal-950'}`}>
+                            <span className={`rounded-full px-3 py-1 text-xs font-semibold ${p.activo ? 'bg-emerald-100 text-emerald-800' : 'bg-coal-50 text-coal-950 dark:bg-chalk/10 dark:text-chalk/80'}`}>
                               {p.activo ? 'Activo' : 'Inactivo'}
                             </span>
                           </td>

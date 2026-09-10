@@ -67,7 +67,7 @@ export default function Catalogo() {
                   onClick={() => cambiarCategoria(c)}
                   className={`rounded-full px-4 py-2 text-sm transition-all duration-300 ${
                     filtro === c
-                      ? 'bg-coal-950 text-cream shadow-md'
+                      ? 'bg-onix text-chalk shadow-md'
                       : 'bg-white text-coal-50 border border-wood-100 hover:border-wood-500 hover:text-wood-700'
                   }`}
                 >
