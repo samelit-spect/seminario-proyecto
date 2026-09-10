@@ -8,6 +8,16 @@ import { leerProductos } from '../services/productosService'
 const precioFormateado = (n: number) =>
   '$' + n.toLocaleString('es-AR')
 
+type Orden = 'relevancia' | 'precio-asc' | 'precio-desc' | 'nombre-asc' | 'nombre-desc'
+
+const ordenes: { id: Orden; label: string }[] = [
+  { id: 'relevancia', label: 'Relevancia' },
+  { id: 'precio-asc', label: 'Precio: menor a mayor' },
+  { id: 'precio-desc', label: 'Precio: mayor a menor' },
+  { id: 'nombre-asc', label: 'Nombre: A–Z' },
+  { id: 'nombre-desc', label: 'Nombre: Z–A' },
+]
+
 export default function Catalogo() {
   const [searchParams, setSearchParams] = useSearchParams()
   const navigate = useNavigate()
@@ -16,6 +26,8 @@ export default function Catalogo() {
   )
   const [busqueda, setBusqueda] = useState('')
   const [maxPrecio, setMaxPrecio] = useState(2000000)
+  const [orden, setOrden] = useState<Orden>('relevancia')
+  const [ordenAbierto, setOrdenAbierto] = useState(false)
   const [sugerenciasFoco, setSugerenciasFoco] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -31,7 +43,7 @@ export default function Catalogo() {
   }
 
   const productos = useMemo(() => {
-    return productosDemo.filter((p) => {
+    const filtrados = productosDemo.filter((p) => {
       const okActivo = p.activo
       const okCat = filtro === 'Todas' || p.categoria === filtro
       const q = busqueda.toLowerCase()
@@ -39,7 +51,21 @@ export default function Catalogo() {
       const okP = p.precio <= maxPrecio
       return okActivo && okCat && okQ && okP
     })
-  }, [productosDemo, filtro, busqueda, maxPrecio])
+
+    const copia = [...filtrados]
+    switch (orden) {
+      case 'precio-asc':
+        return copia.sort((a, b) => a.precio - b.precio)
+      case 'precio-desc':
+        return copia.sort((a, b) => b.precio - a.precio)
+      case 'nombre-asc':
+        return copia.sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'))
+      case 'nombre-desc':
+        return copia.sort((a, b) => b.nombre.localeCompare(a.nombre, 'es'))
+      default:
+        return copia
+    }
+  }, [productosDemo, filtro, busqueda, maxPrecio, orden])
 
   // Sugerencias predictivas (solo activos, por nombre o categoría)
   const sugerencias = useMemo(() => {
@@ -148,6 +174,47 @@ export default function Catalogo() {
                 onChange={(e) => setMaxPrecio(Number(e.target.value))}
                 className="w-36 accent-wood-600"
               />
+            </div>
+
+            {/* Ordenar por */}
+            <div className="relative">
+              <button
+                onClick={() => setOrdenAbierto((o) => !o)}
+                onBlur={() => setTimeout(() => setOrdenAbierto(false), 150)}
+                className="flex items-center gap-2 rounded-full border border-wood-100 bg-white px-4 py-2 text-sm text-coal-50 transition-all duration-300 hover:border-wood-500 hover:text-wood-700"
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4h13M3 8h9m-9 4h6m4 0l4-4 4 4M17 20V8" />
+                </svg>
+                {ordenes.find((o) => o.id === orden)?.label}
+                <svg className={`h-4 w-4 transition-transform duration-300 ${ordenAbierto ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {ordenAbierto && (
+                <div className="absolute right-0 top-full z-40 mt-2 w-64 animate-fade-in overflow-hidden rounded-2xl border border-wood-100 bg-white shadow-2xl">
+                  {ordenes.map((o) => (
+                    <button
+                      key={o.id}
+                      onMouseDown={(e) => e.preventDefault()}
+                      onClick={() => {
+                        setOrden(o.id)
+                        setOrdenAbierto(false)
+                      }}
+                      className={`flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm transition-colors hover:bg-cream-50 ${
+                        orden === o.id ? 'font-medium text-wood-700' : 'text-coal-50'
+                      }`}
+                    >
+                      {orden === o.id && (
+                        <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      )}
+                      <span className={orden === o.id ? '' : 'pl-6'}>{o.label}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -2,6 +2,17 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Mejora visual 7: Ordenar por
+
+### Qué se hizo
+- Agregado dropdown "Ordenar por" en la barra de filtros del Catálogo con 5 opciones: Relevancia, Precio menor→mayor, Precio mayor→menor, Nombre A–Z y Nombre Z–A.
+- Ordenación aplicada en `useMemo` sobre los productos ya filtrados (por búsqueda, categoría y precio máx), con `localeCompare('es')` para los nombres.
+- Dropdown con marca de check en la opción activa, icono de orden + flecha que rota, y cierre por clic fuera/blur.
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Mejora visual 8 (consultar al usuario antes de avanzar).
+
 ## 2026-09-10 - Mejora visual 6: Búsqueda predictiva
 
 ### Qué se hizo
