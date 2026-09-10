@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
 import ProductCard from '../components/products/ProductCard'
+import Reveal from '../components/ui/Reveal'
 import { leerProductos } from '../services/productosService'
 
 export default function Catalogo() {
@@ -95,9 +96,9 @@ export default function Catalogo() {
         {productos.length > 0 ? (
           <div className="grid gap-8 pb-24 sm:grid-cols-2 lg:grid-cols-3">
             {productos.map((p, i) => (
-              <div key={p.id} className="animate-fade-up" style={{ animationDelay: `${i * 100}ms` }}>
+              <Reveal key={p.id} delay={i * 80}>
                 <ProductCard producto={p} />
-              </div>
+              </Reveal>
             ))}
           </div>
         ) : (

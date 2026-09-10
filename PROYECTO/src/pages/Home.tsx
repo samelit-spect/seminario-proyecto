@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import ProductCard from '../components/products/ProductCard'
+import Reveal from '../components/ui/Reveal'
 import { leerProductos } from '../services/productosService'
 
 export default function Home() {
@@ -78,11 +79,7 @@ export default function Home() {
             { t: 'Garantía oficial', d: '12 meses en todos los productos', icon: 'M9 12l2 2 4-4m5 .5a9 9 0 11-3.7-7.3' },
             { t: 'Atención personalizada', d: 'Asesoramiento antes y después de la compra', icon: 'M8 10h.01M12 10h.01M16 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' },
           ].map((f, i) => (
-            <div
-              key={f.t}
-              className="group flex animate-fade-up items-start gap-4"
-              style={{ animationDelay: `${i * 120}ms` }}
-            >
+            <Reveal key={f.t} delay={i * 120} className="group flex items-start gap-4">
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-wood-300 to-wood-600 text-chalk shadow-md transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d={f.icon} />
@@ -92,14 +89,14 @@ export default function Home() {
                 <h3 className="font-display text-lg text-coal-950">{f.t}</h3>
                 <p className="text-sm text-coal-50">{f.d}</p>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
 
       {/* ===== Destacados ===== */}
       <section className="bg-grain mx-auto max-w-7xl px-6 py-20">
-        <div className="mb-12 flex items-end justify-between">
+        <Reveal className="mb-12 flex items-end justify-between">
           <div>
             <p className="text-sm uppercase tracking-[0.3em] text-wood-600">Lo más buscado</p>
             <h2 className="mt-2 font-display text-4xl text-coal-950">Productos destacados</h2>
@@ -111,13 +108,13 @@ export default function Home() {
             Ver todos
             <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
           </Link>
-        </div>
+        </Reveal>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {destacados.map((p, i) => (
-            <div key={p.id} className="animate-fade-up" style={{ animationDelay: `${i * 150}ms` }}>
+            <Reveal key={p.id} delay={i * 150}>
               <ProductCard producto={p} />
-            </div>
+            </Reveal>
           ))}
         </div>
 
@@ -135,7 +132,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-onix py-24 text-center text-chalk">
         <div className="absolute inset-0 bg-grain opacity-40" />
         <div className="absolute left-1/4 top-0 h-64 w-64 animate-float rounded-full bg-wood-700/30 blur-3xl" />
-        <div className="relative z-10 mx-auto max-w-2xl animate-fade-up px-6">
+        <Reveal className="relative z-10 mx-auto max-w-2xl px-6">
           <h2 className="font-display text-4xl md:text-5xl">
             ¿Listo para <span className="text-gradient italic">renovar</span> tu tecnología?
           </h2>
@@ -148,7 +145,7 @@ export default function Home() {
           >
             Comprar ahora
           </Link>
-        </div>
+        </Reveal>
       </section>
     </div>
   )

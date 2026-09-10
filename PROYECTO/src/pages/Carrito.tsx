@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 
+import Reveal from '../components/ui/Reveal'
 import { useCart } from '../context/CartContext'
 
 const precioFormateado = (n: number) =>
@@ -54,10 +55,10 @@ export default function Carrito() {
           {/* Items */}
           <div className="space-y-5 lg:col-span-2">
             {items.map((item, i) => (
-              <div
+              <Reveal
                 key={item.producto.id}
-                className="group animate-fade-up overflow-hidden rounded-2xl border border-wood-100 bg-white shadow-sm"
-                style={{ animationDelay: `${i * 100}ms` }}
+                delay={i * 80}
+                className="group overflow-hidden rounded-2xl border border-wood-100 bg-white shadow-sm"
               >
                 <div className="flex flex-wrap items-center gap-5 p-5">
                   <Link
@@ -117,12 +118,12 @@ export default function Carrito() {
                     </button>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
 
           {/* Resumen */}
-          <aside className="h-fit animate-fade-up rounded-2xl border border-wood-100 bg-white p-7 shadow-sm lg:sticky lg:top-28" style={{ animationDelay: '200ms' }}>
+          <aside className="h-fit rounded-2xl border border-wood-100 bg-white p-7 shadow-sm lg:sticky lg:top-28">
             <h2 className="font-display text-2xl text-coal-950">Resumen del pedido</h2>
 
             <div className="mt-6 space-y-3 text-sm text-coal-50">

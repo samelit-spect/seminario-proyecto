@@ -2,6 +2,18 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Mejora visual 2: Animaciones al scrollear
+
+### Qué se hizo
+- Creado componente genérico `src/components/ui/Reveal.tsx` con **IntersectionObserver**: envuelve cualquier sección/card y la revela (fade + slide hacia arriba) al entrar en la viewport.
+- Acepta `delay` (ms) para escalonar elementos (grids, listas).
+- CSS en `index.css`: clases `.reveal` / `.reveal-visible` con transición suave y respeto a `prefers-reduced-motion`.
+- Aplicado en: Home (beneficios, destacados, CTA), Catálogo (grid de productos), Nosotros (misión, valores, CTA), ProductoDetalle (info, relacionados), Carrito (items, resumen), Checkout (3 pasos + resumen), MisPedidos (tarjetas), Admin (dashboard: stats, pedidos recientes, stock bajo).
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Mejora visual 3 (preguntada al usuario antes de avanzar).
+
 ## 2026-09-10 - Mejora visual 1: Modo oscuro/claro
 
 ### Qué se hizo

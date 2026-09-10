@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 
+import Reveal from '../components/ui/Reveal'
 import { usePedidos } from '../services/pedidosService'
 import type { EstadoPedido } from '../types'
 
@@ -56,10 +57,10 @@ export default function MisPedidos() {
         ) : (
           <div className="space-y-6">
             {pedidos.map((p, i) => (
-              <article
+              <Reveal
                 key={p.id}
-                className="animate-fade-up overflow-hidden rounded-2xl border border-wood-100 bg-white shadow-sm"
-                style={{ animationDelay: `${i * 100}ms` }}
+                delay={i * 80}
+                className="overflow-hidden rounded-2xl border border-wood-100 bg-white shadow-sm"
               >
                 <header className="flex flex-wrap items-center justify-between gap-3 border-b border-wood-100 bg-cream-50 px-6 py-4">
                   <div className="flex items-center gap-4">
@@ -93,7 +94,7 @@ export default function MisPedidos() {
                     {precioFormateado(p.total)}
                   </p>
                 </footer>
-              </article>
+              </Reveal>
             ))}
           </div>
         )}

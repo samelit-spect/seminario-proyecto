@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { useCart } from '../context/CartContext'
+import Reveal from '../components/ui/Reveal'
 import { guardarPedido } from '../services/pedidosService'
 
 const precioFormateado = (n: number) =>
@@ -117,7 +118,7 @@ export default function Checkout() {
         <form onSubmit={handleSubmit} className="grid items-start gap-10 lg:grid-cols-3">
           {/* Formulario */}
           <div className="space-y-8 lg:col-span-2">
-            <section className="animate-fade-up rounded-2xl border border-wood-100 bg-white p-7">
+            <Reveal delay={0} className="rounded-2xl border border-wood-100 bg-white p-7">
               <h2 className="mb-5 flex items-center gap-3 font-display text-2xl text-coal-950">
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-onix text-sm font-bold text-chalk">1</span>
                 Datos personales
@@ -128,9 +129,9 @@ export default function Checkout() {
                 <input placeholder="Teléfono *" required value={form.telefono} onChange={setCampo('telefono')} className="field" />
                 <input placeholder="Correo electrónico *" type="email" required value={form.email} onChange={setCampo('email')} className="field" />
               </div>
-            </section>
+            </Reveal>
 
-            <section className="animate-fade-up rounded-2xl border border-wood-100 bg-white p-7" style={{ animationDelay: '100ms' }}>
+            <Reveal delay={100} className="rounded-2xl border border-wood-100 bg-white p-7">
               <h2 className="mb-5 flex items-center gap-3 font-display text-2xl text-coal-950">
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-onix text-sm font-bold text-chalk">2</span>
                 Dirección de envío
@@ -141,9 +142,9 @@ export default function Checkout() {
                 <input placeholder="Ciudad *" required value={form.ciudad} onChange={setCampo('ciudad')} className="field" />
                 <input placeholder="Código postal *" required value={form.codigoPostal} onChange={setCampo('codigoPostal')} className="field" />
               </div>
-            </section>
+            </Reveal>
 
-            <section className="animate-fade-up rounded-2xl border border-wood-100 bg-white p-7" style={{ animationDelay: '200ms' }}>
+            <Reveal delay={200} className="rounded-2xl border border-wood-100 bg-white p-7">
               <h2 className="mb-5 flex items-center gap-3 font-display text-2xl text-coal-950">
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-onix text-sm font-bold text-chalk">3</span>
                 Forma de pago
@@ -166,11 +167,11 @@ export default function Checkout() {
                   </div>
                 </label>
               </div>
-            </section>
+            </Reveal>
           </div>
 
           {/* Resumen */}
-          <aside className="animate-fade-up rounded-2xl border border-wood-100 bg-white p-7 shadow-sm lg:sticky lg:top-28" style={{ animationDelay: '250ms' }}>
+          <Reveal delay={250} className="rounded-2xl border border-wood-100 bg-white p-7 shadow-sm lg:sticky lg:top-28">
             <h2 className="font-display text-2xl text-coal-950">Tu pedido</h2>
 
             <ul className="mt-5 space-y-3">
@@ -228,7 +229,7 @@ export default function Checkout() {
             >
               ← Volver al carrito
             </Link>
-          </aside>
+          </Reveal>
         </form>
       </div>
     </div>

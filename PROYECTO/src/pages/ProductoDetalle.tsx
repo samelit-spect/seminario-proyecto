@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 import { useCart } from '../context/CartContext'
+import Reveal from '../components/ui/Reveal'
 import { leerProductos } from '../services/productosService'
 
 const precioFormateado = (n: number) =>
@@ -84,7 +85,7 @@ export default function ProductoDetalle() {
           </div>
 
           {/* Info */}
-          <div className="animate-fade-up">
+          <Reveal delay={150}>
             <p className="text-sm uppercase tracking-[0.3em] text-wood-600">{producto.categoria}</p>
             <h1 className="mt-3 font-display text-4xl leading-tight text-coal-950 md:text-5xl">
               {producto.nombre}
@@ -167,20 +168,21 @@ export default function ProductoDetalle() {
                 </div>
               ))}
             </div>
-          </div>
+          </Reveal>
         </div>
 
         {/* Relacionados */}
         {relacionados.length > 0 && (
           <section className="py-20">
-            <div className="mb-8 flex items-center justify-between">
+            <Reveal className="mb-8 flex items-center justify-between">
               <h2 className="font-display text-3xl text-coal-950">También te puede gustar</h2>
               <Link to={`/catalogo?categoria=${producto.categoria}`} className="text-sm font-medium text-wood-700 hover:text-wood-900">
                 Ver categoría →
               </Link>
-            </div>
+            </Reveal>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {relacionados.map((p) => (
+              {relacionados.map((p, i) => (
+                <Reveal key={p.id} delay={i * 100}>
                 <Link
                   key={p.id}
                   to={`/producto/${p.id}`}
@@ -200,8 +202,9 @@ export default function ProductoDetalle() {
                     <p className="mt-1 font-semibold text-wood-700">{precioFormateado(p.precio)}</p>
                   </div>
                 </Link>
-              ))}
-            </div>
+              </Reveal>
+            ))}
+          </div>
           </section>
         )}
       </div>

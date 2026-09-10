@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import ProductoForm from '../components/admin/ProductoForm'
+import Reveal from '../components/ui/Reveal'
 import {
   actualizarProducto,
   crearProducto,
@@ -117,7 +118,7 @@ export default function Admin() {
                     { label: 'Productos', valor: String(productos.length), icon: 'M20 7l-8-4-8 4v10l8 4 8-4V7z' },
                     { label: 'En stock', valor: String(enStock), icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
                   ].map((s, i) => (
-                    <div key={s.label} className="animate-fade-up rounded-2xl border border-wood-100 bg-white p-6 shadow-sm" style={{ animationDelay: `${i * 80}ms` }}>
+                    <Reveal key={s.label} delay={i * 80} className="rounded-2xl border border-wood-100 bg-white p-6 shadow-sm">
                       <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-cream-100 text-wood-700">
                         <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d={s.icon} />
@@ -125,13 +126,13 @@ export default function Admin() {
                       </span>
                       <p className="mt-4 text-sm text-coal-50">{s.label}</p>
                       <p className="font-display text-2xl font-bold text-coal-950">{s.valor}</p>
-                    </div>
+                    </Reveal>
                   ))}
                 </div>
 
                 <div className="grid gap-6 lg:grid-cols-2">
                   {/* Pedidos recientes */}
-                  <div className="animate-fade-up rounded-2xl border border-wood-100 bg-white p-7" style={{ animationDelay: '200ms' }}>
+                  <Reveal delay={200} className="rounded-2xl border border-wood-100 bg-white p-7">
                     <div className="mb-5 flex items-center justify-between">
                       <h2 className="font-display text-2xl text-coal-950">Pedidos recientes</h2>
                       <button onClick={() => setVista('pedidos')} className="text-sm font-medium text-wood-700 hover:text-wood-900">
@@ -158,10 +159,10 @@ export default function Admin() {
                         ))}
                       </ul>
                     )}
-                  </div>
+                  </Reveal>
 
                   {/* Stock bajo */}
-                  <div className="animate-fade-up rounded-2xl border border-wood-100 bg-white p-7" style={{ animationDelay: '320ms' }}>
+                  <Reveal delay={320} className="rounded-2xl border border-wood-100 bg-white p-7">
                     <div className="mb-5 flex items-center justify-between">
                       <h2 className="font-display text-2xl text-coal-950">Stock bajo</h2>
                       <button onClick={() => setVista('productos')} className="text-sm font-medium text-wood-700 hover:text-wood-900">
@@ -185,7 +186,7 @@ export default function Admin() {
                         ))}
                       </ul>
                     )}
-                  </div>
+                  </Reveal>
                 </div>
               </div>
             )}
