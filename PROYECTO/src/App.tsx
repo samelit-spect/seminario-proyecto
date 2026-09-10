@@ -1,14 +1,17 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-function Home() {
-  return <div className="p-8 text-center text-2xl font-bold">TechStore - Home</div>
-}
+import Layout from './components/layout/Layout'
+import Catalogo from './pages/Catalogo'
+import Home from './pages/Home'
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/catalogo" element={<Catalogo />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   )

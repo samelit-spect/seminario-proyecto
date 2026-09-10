@@ -1,13 +1,90 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import 'tailwindcss';
+
+/* ===== Paleta elegancia: blanco, madera, negro ===== */
+@theme {
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --color-cream: #faf7f2;
+  --color-cream-100: #f5efe6;
+  --color-cream-200: #ece2d3;
+
+  --color-wood-100: #e7d6bf;
+  --color-wood-300: #c9a37a;
+  --color-wood-500: #a5754a;
+  --color-wood-600: #8a5d35;
+  --color-wood-700: #6f4827;
+  --color-wood-900: #3e2a18;
+
+  --color-coal-50: #3a3a3c;
+  --color-coal-900: #171719;
+  --color-coal-950: #0e0e10;
+
+  --animate-fade-up: fade-up 0.7s ease both;
+  --animate-fade-in: fade-in 0.9s ease both;
+  --animate-zoom-in: zoom-in 0.8s ease both;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes fade-up {
+    0% { opacity: 0; transform: translateY(28px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes zoom-in {
+    0% { opacity: 0; transform: scale(0.94); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+}
 
 :root {
-  color-scheme: light dark;
-  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: light;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  background-color: #f1f5f9;
+  background-color: var(--color-cream);
+  color: var(--color-coal-900);
+}
+
+::selection {
+  background: var(--color-wood-500);
+  color: #fff;
+}
+
+/* Scrollbar elegante */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-cream); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-wood-300);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-wood-600); }
+
+/* Utilidad: degradado de texto dorado/madera */
+.text-gradient {
+  background: linear-gradient(100deg, #a5754a, #6f4827, #c9a37a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Grado sutil de fondo texturizado */
+.bg-grain {
+  background-image: radial-gradient(rgba(110, 72, 39, 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
 }

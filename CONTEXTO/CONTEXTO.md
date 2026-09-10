@@ -2,6 +2,26 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Etapa 4: Layout y Home con diseño elegancia (blanco/madera/negro)
+
+### Qué se hizo
+- Definido tema Tailwind en `index.css` con paleta elegancia:
+  - `cream` (blancos cálidos), `wood` (marrón madera), `coal` (negros).
+  - Fuentes: **Playfair Display** (títulos serif) + **Inter** (cuerpo).
+  - Animaciones: fade-up, fade-in, zoom-in, float; degradados con clase `text-gradient` y `bg-grain`.
+- Creados componentes de layout: `Navbar` (fija, cambia de fondo al scrollear, menú móvil), `Footer`, `Layout`.
+- Creado `ProductCard` (tarjeta con zoom de imagen al hover, sombra, animación).
+- Datos demo en `data/productos.ts` (6 productos con fotos reales de Unsplash, 3 categorías).
+- Página **Home**: hero a pantalla completa con fondo negro + blobs de madera, beneficios, destacados y CTA final.
+- Página **Catálogo**: búsqueda, filtros por categoría y precio máximo, grid animado.
+- `App.tsx` con rutas bajo `Layout`.
+- **Verificado:** `npm run build` compila OK.
+
+### Próximos pasos
+- Página de **detalle de producto** (`/producto/:id`).
+- Página **Nosotros**.
+- Contextos de Autenticación y Carrito.
+
 ## 2026-09-10 - Etapa 4: Tailwind + Router + Firebase configurados
 
 ### Qué se hizo
