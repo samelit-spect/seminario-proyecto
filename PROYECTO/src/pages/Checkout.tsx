@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { useCart } from '../context/CartContext'
+import { guardarPedido } from '../services/pedidosService'
 
 const precioFormateado = (n: number) =>
   '$' + n.toLocaleString('es-AR')
@@ -33,6 +34,28 @@ export default function Checkout() {
     // Simula la creación del pedido (se conectará a Firestore en la Etapa 5)
     await new Promise((r) => setTimeout(r, 800))
     const numero = 'TS-' + Math.floor(100000 + Math.random() * 900000)
+    guardarPedido({
+      id: numero,
+      usuarioId: 'anonimo',
+      items: items.map((i) => ({
+        productoId: i.producto.id,
+        nombre: i.producto.nombre,
+        precio: i.producto.precio,
+        cantidad: i.cantidad,
+      })),
+      total,
+      estado: 'Pendiente',
+      datosEnvio: {
+        nombres: form.nombres,
+        dni: form.dni,
+        telefono: form.telefono,
+        calle: form.calle,
+        numero: form.numero,
+        ciudad: form.ciudad,
+        codigoPostal: form.codigoPostal,
+      },
+      fecha: Date.now(),
+    })
     setNumPedido(numero)
     setConfirmado(true)
     vaciar()

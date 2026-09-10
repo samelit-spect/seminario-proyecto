@@ -2,6 +2,19 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Etapa 4: Historial de pedidos
+
+### Qué se hizo
+- Creado `src/services/pedidosService.ts`: guardar/leer pedidos en localStorage + hook `usePedidos`.
+- El Checkout ahora **guarda el pedido real** (items, total, estado Pendiente, datos de envío) al confirmar.
+- Creada página **MisPedidos** (`/mis-pedidos`):
+  - Estado vacío elegante.
+  - Lista de pedidos con número, fecha, estado coloreado (Pendiente/Enviado/Entregado/Cancelado), items, dirección de entrega y total.
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Panel de administración (`/admin`): dashboard con estadísticas, CRUD de productos y gestión de pedidos (estados).
+
 ## 2026-09-10 - Etapa 4: Página Checkout
 
 ### Qué se hizo
