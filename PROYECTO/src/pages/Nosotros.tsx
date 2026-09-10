@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import Reveal from '../components/ui/Reveal'
+import Parallax from '../components/ui/Parallax'
 
 export default function Nosotros() {
   const valores = [
@@ -29,11 +30,13 @@ export default function Nosotros() {
       {/* Misión */}
       <section className="mx-auto grid max-w-7xl items-center gap-14 px-6 py-24 lg:grid-cols-2">
         <Reveal className="overflow-hidden rounded-[2rem] shadow-xl">
-          <img
-            src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=900&q=80"
-            alt="Notebook premium"
-            className="h-[420px] w-full object-cover transition-transform duration-[1.5s] hover:scale-105"
-          />
+          <Parallax velocidad={0.2} className="h-full">
+            <img
+              src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=900&q=80"
+              alt="Notebook premium"
+              className="h-[480px] w-full scale-110 object-cover"
+            />
+          </Parallax>
         </Reveal>
         <Reveal delay={150}>
           <p className="text-sm uppercase tracking-[0.3em] text-wood-600">Quiénes somos</p>

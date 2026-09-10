@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import ProductCard from '../components/products/ProductCard'
+import Parallax from '../components/ui/Parallax'
 import Reveal from '../components/ui/Reveal'
 import { leerProductos } from '../services/productosService'
 
@@ -50,13 +51,13 @@ export default function Home() {
           </div>
 
           <div className="relative hidden animate-zoom-in md:block">
-            <div className="overflow-hidden rounded-[2rem] shadow-2xl shadow-wood-900/40">
+            <Parallax velocidad={0.18} className="overflow-hidden rounded-[2rem] shadow-2xl shadow-wood-900/40">
               <img
                 src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=900&q=80"
                 alt="Reloj premium"
-                className="h-[520px] w-full object-cover transition-transform duration-[1.5s] hover:scale-105"
+                className="h-[520px] w-full scale-110 object-cover transition-transform duration-[1.5s] hover:scale-125"
               />
-            </div>
+            </Parallax>
             <div className="absolute -bottom-6 -left-6 animate-fade-up rounded-2xl bg-chalk px-6 py-4 text-onix shadow-2xl" style={{ animationDelay: '500ms' }}>
               <p className="font-display text-2xl font-bold text-wood-700">+450</p>
               <p className="text-sm text-coal-50">clientes satisfechos</p>

@@ -2,6 +2,20 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Mejora visual 4: Efecto parallax
+
+### Qué se hizo
+- Creado `src/components/ui/Parallax.tsx`: envuelve contenido y lo desplaza en `translateY` según su posición relativa al centro de la viewport (factor `velocidad` configurable; negativo invierte).
+  - Implementado con `requestAnimationFrame` + listener de scroll/resize (passive).
+  - Respeta `prefers-reduced-motion` (si está activado, no se mueve).
+- Aplicado en:
+  - Home hero: imagen del reloj con `velocidad={0.18}` (con `scale-110` para que el desplazamiento no deje bordes vacíos).
+  - Nosotros: imagen de la sección Misión/quiénes somos con `velocidad={0.2}`.
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Mejora visual 5 (consultar al usuario antes de avanzar).
+
 ## 2026-09-10 - Mejora visual 3: Preloader animado
 
 ### Qué se hizo
