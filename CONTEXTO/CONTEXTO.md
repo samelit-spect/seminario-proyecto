@@ -2,6 +2,23 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Etapa 4: Tailwind + Router + Firebase configurados
+
+### Qué se hizo
+- Se instalaron y configuraron en `PROYECTO/`:
+  - **Tailwind CSS v4** (plugin `@tailwindcss/vite`), reemplazado `index.css` de plantilla.
+  - **React Router DOM** (rutas base en `App.tsx`).
+  - **Firebase** (config en `src/services/firebase.ts` con variables de entorno + `firebaseClient.ts`).
+- Se creó `src/types/index.ts` con los tipos de dominio (Producto, Pedido, Usuario, etc.).
+- Estructura de carpetas creada: components/{ui,layout,products}, pages/{admin}, context, services, types, hooks.
+- Se creó `.env.example` con las claves de Firebase a completar.
+- `index.html` con título "TechStore - Tienda de Electrónica".
+- **Verificado:** `npm run build` compila OK (Tailwind activo).
+
+### Próximos pasos
+- Crear el layout base (Navbar + Footer) y las primeras páginas funcionales (Home y Catálogo) con datos de demostración.
+- Completar claves de Firebase en `.env` (el usuario debe crearlas en la consola de Firebase).
+
 ## 2026-09-10 - Inicio Etapa 4 (Desarrollo): proyecto React inicializado
 
 ### Qué se hizo
