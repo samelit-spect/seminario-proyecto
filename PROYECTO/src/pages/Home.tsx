@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import ProductCard from '../components/products/ProductCard'
 import Parallax from '../components/ui/Parallax'
 import Reveal from '../components/ui/Reveal'
+import Testimonios from '../components/ui/Testimonios'
 import { leerProductos } from '../services/productosService'
 
 export default function Home() {
@@ -128,6 +129,9 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      {/* ===== Testimonios ===== */}
+      <Testimonios />
 
       {/* ===== CTA final ===== */}
       <section className="relative overflow-hidden bg-onix py-24 text-center text-chalk">

@@ -2,6 +2,17 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Mejora visual 12: Testimonios
+
+### Qué se hizo
+- Creado `src/components/ui/Testimonios.tsx`: sección de reseñas con 4 testimonios (estrellas, avatar con iniciales, texto y rol del cliente), con animación `Reveal` y hover elevado.
+- Insertado en la Home entre "Productos destacados" y el CTA final.
+- Componente reutilizable (acepta prop `titulo`), listo para usar en Nosotros.
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Mejora visual 13 (consultar al usuario antes de avanzar).
+
 ## 2026-09-10 - Mejora visual 11: Cupones de descuento
 
 ### Qué se hizo
