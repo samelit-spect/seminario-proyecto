@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 
 import Reveal from '../components/ui/Reveal'
 import Parallax from '../components/ui/Parallax'
+import Breadcrumb from '../components/ui/Breadcrumb'
 
 export default function Nosotros() {
   const valores = [
@@ -17,6 +18,7 @@ export default function Nosotros() {
         <div className="absolute inset-0 bg-grain opacity-40" />
         <div className="absolute right-0 top-0 h-80 w-80 animate-float rounded-full bg-wood-700/30 blur-3xl" />
         <div className="relative z-10 mx-auto max-w-7xl px-6">
+          <Breadcrumb oscuro items={[{ label: 'Nosotros' }]} className="mb-10" />
           <p className="animate-fade-up text-sm uppercase tracking-[0.35em] text-wood-300">Nuestra historia</p>
           <h1 className="mt-4 max-w-3xl animate-fade-up font-display text-5xl leading-tight md:text-6xl" style={{ animationDelay: '120ms' }}>
             Tecnología con <span className="text-gradient italic">alma</span> y diseño

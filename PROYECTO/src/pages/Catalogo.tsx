@@ -2,6 +2,7 @@ import { useMemo, useRef, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 
 import ProductCard from '../components/products/ProductCard'
+import Breadcrumb from '../components/ui/Breadcrumb'
 import Reveal from '../components/ui/Reveal'
 import { leerProductos } from '../services/productosService'
 
@@ -91,6 +92,8 @@ export default function Catalogo() {
   return (
     <div className="bg-cream pt-28">
       <div className="mx-auto max-w-7xl px-6">
+        <Breadcrumb items={[{ label: 'Catálogo' }]} className="mb-8" />
+
         <header className="mb-10">
           <p className="text-sm uppercase tracking-[0.3em] text-wood-600">Descubrí</p>
           <h1 className="mt-2 font-display text-5xl text-coal-950">Catálogo</h1>

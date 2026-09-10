@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
+import Breadcrumb from '../components/ui/Breadcrumb'
 import { useAuth } from '../context/AuthContext'
 
 export default function Login() {
@@ -45,6 +46,7 @@ export default function Login() {
       <div className="absolute -right-16 bottom-1/4 h-72 w-72 rounded-full bg-wood-500/20 blur-3xl" />
 
       <div className="relative z-10 w-full max-w-md">
+        <Breadcrumb oscuro items={[{ label: 'Ingresar' }]} className="mb-8 text-center" />
         <div className="animate-zoom-in rounded-3xl border border-cream/10 bg-white p-9 shadow-2xl">
           <div className="mb-7 text-center">
             <Link

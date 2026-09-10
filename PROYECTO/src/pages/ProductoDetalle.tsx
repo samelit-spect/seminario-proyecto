@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 import { useCart } from '../context/CartContext'
+import Breadcrumb from '../components/ui/Breadcrumb'
 import Lightbox from '../components/ui/Lightbox'
 import Reveal from '../components/ui/Reveal'
 import { leerProductos } from '../services/productosService'
@@ -45,13 +46,13 @@ export default function ProductoDetalle() {
     <div className="bg-cream pt-28">
       <div className="mx-auto max-w-7xl px-6">
         {/* Breadcrumb */}
-        <nav className="mb-8 text-sm text-coal-50">
-          <Link to="/" className="transition-colors hover:text-wood-700">Inicio</Link>
-          <span className="mx-2">/</span>
-          <Link to="/catalogo" className="transition-colors hover:text-wood-700">Catálogo</Link>
-          <span className="mx-2">/</span>
-          <span className="text-coal-950">{producto.nombre}</span>
-        </nav>
+        <Breadcrumb
+          className="mb-8"
+          items={[
+            { label: 'Catálogo', to: '/catalogo' },
+            { label: producto.nombre },
+          ]}
+        />
 
         <div className="grid gap-14 lg:grid-cols-2">
           {/* Galería */}

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 
+import Breadcrumb from '../components/ui/Breadcrumb'
 import Reveal from '../components/ui/Reveal'
 import { usePedidos } from '../services/pedidosService'
 import type { EstadoPedido } from '../types'
@@ -27,6 +28,7 @@ export default function MisPedidos() {
   return (
     <div className="bg-cream pt-28">
       <div className="mx-auto max-w-5xl px-6 pb-24">
+        <Breadcrumb items={[{ label: 'Mis pedidos' }]} className="mb-8" />
         <header className="mb-10">
           <p className="text-sm uppercase tracking-[0.3em] text-wood-600">Historial</p>
           <h1 className="mt-2 font-display text-5xl text-coal-950">Mis pedidos</h1>

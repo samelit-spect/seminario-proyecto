@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 
+import Breadcrumb from '../components/ui/Breadcrumb'
 import Reveal from '../components/ui/Reveal'
 import { useCart } from '../context/CartContext'
 
@@ -37,6 +38,7 @@ export default function Carrito() {
   return (
     <div className="bg-cream pt-28">
       <div className="mx-auto max-w-7xl px-6 pb-24">
+        <Breadcrumb items={[{ label: 'Carrito' }]} className="mb-8" />
         <header className="mb-10 flex items-end justify-between">
           <div>
             <p className="text-sm uppercase tracking-[0.3em] text-wood-600">Tu selección</p>

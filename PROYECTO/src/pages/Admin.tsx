@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import ProductoForm from '../components/admin/ProductoForm'
+import Breadcrumb from '../components/ui/Breadcrumb'
 import Reveal from '../components/ui/Reveal'
 import {
   actualizarProducto,
@@ -78,6 +79,7 @@ export default function Admin() {
     <div className="min-h-screen bg-cream pt-24">
       <div className="mx-auto max-w-7xl px-6 pb-24">
         {/* Encabezado */}
+        <Breadcrumb items={[{ label: 'Panel admin' }]} className="mb-8" />
         <header className="mb-10">
           <p className="text-sm uppercase tracking-[0.3em] text-wood-600">Panel de administración</p>
           <h1 className="mt-2 font-display text-5xl text-coal-950">TechStore Admin</h1>

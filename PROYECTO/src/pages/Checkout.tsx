@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { useCart } from '../context/CartContext'
+import Breadcrumb from '../components/ui/Breadcrumb'
 import Reveal from '../components/ui/Reveal'
 import { guardarPedido } from '../services/pedidosService'
 
@@ -110,6 +111,7 @@ export default function Checkout() {
   return (
     <div className="bg-cream pt-28">
       <div className="mx-auto max-w-7xl px-6 pb-24">
+        <Breadcrumb items={[{ label: 'Carrito', to: '/carrito' }, { label: 'Checkout' }]} className="mb-8" />
         <header className="mb-10">
           <p className="text-sm uppercase tracking-[0.3em] text-wood-600">Último paso</p>
           <h1 className="mt-2 font-display text-5xl text-coal-950">Checkout</h1>

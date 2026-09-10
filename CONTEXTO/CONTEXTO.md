@@ -2,6 +2,17 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Mejora visual 8: Breadcrumbs en todas las páginas
+
+### Qué se hizo
+- Creado componente reutilizable `src/components/ui/Breadcrumb.tsx` (Inicio / … / página actual) con variante `oscuro` para fondos oscuros (hero, login).
+- Agregado en: Catálogo (Inicio / Catálogo), ProductoDetalle (Inicio / Catálogo / producto), Carrito, Checkout (Catálogo… / Carrito / Checkout), MisPedidos, Nosotros (en hero oscuro), Login (variante oscura), Registro (variante oscura) y Admin (Inicio / Panel admin).
+- En ProductoDetalle se reemplazó el breadcrumb manual por el componente.
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Mejora visual 9 (consultar al usuario antes de avanzar).
+
 ## 2026-09-10 - Mejora visual 7: Ordenar por
 
 ### Qué se hizo
