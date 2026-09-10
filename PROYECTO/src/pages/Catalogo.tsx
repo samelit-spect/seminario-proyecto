@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
 import ProductCard from '../components/products/ProductCard'
-import { categorias, productosDemo } from '../data/productos'
+import { leerProductos } from '../services/productosService'
 
 export default function Catalogo() {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -12,6 +12,11 @@ export default function Catalogo() {
   const [busqueda, setBusqueda] = useState('')
   const [maxPrecio, setMaxPrecio] = useState(2000000)
 
+  const productosDemo = leerProductos()
+  const categorias = Array.from(
+    new Set(productosDemo.map((p) => p.categoria))
+  )
+
   const cambiarCategoria = (cat: string) => {
     setFiltro(cat)
     if (cat === 'Todas') setSearchParams({})
@@ -20,13 +25,14 @@ export default function Catalogo() {
 
   const productos = useMemo(() => {
     return productosDemo.filter((p) => {
+      const okActivo = p.activo
       const okCat = filtro === 'Todas' || p.categoria === filtro
       const q = busqueda.toLowerCase()
       const okQ = p.nombre.toLowerCase().includes(q)
       const okP = p.precio <= maxPrecio
-      return okCat && okQ && okP
+      return okActivo && okCat && okQ && okP
     })
-  }, [filtro, busqueda, maxPrecio])
+  }, [productosDemo, filtro, busqueda, maxPrecio])
 
   return (
     <div className="bg-cream pt-28">

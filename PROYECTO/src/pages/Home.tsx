@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
 
-import { productosDemo } from '../data/productos'
 import ProductCard from '../components/products/ProductCard'
+import { leerProductos } from '../services/productosService'
 
 export default function Home() {
-  const destacados = productosDemo.slice(0, 3)
+  const destacados = leerProductos()
+    .filter((p) => p.activo)
+    .slice(0, 3)
 
   return (
     <div>

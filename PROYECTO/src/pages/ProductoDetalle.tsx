@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 import { useCart } from '../context/CartContext'
-import { productosDemo } from '../data/productos'
+import { leerProductos } from '../services/productosService'
 
 const precioFormateado = (n: number) =>
   '$' + n.toLocaleString('es-AR')
@@ -14,7 +14,7 @@ export default function ProductoDetalle() {
   const [agregado, setAgregado] = useState(false)
   const { agregar } = useCart()
 
-  const producto = productosDemo.find((p) => p.id === id)
+  const producto = leerProductos().find((p) => p.id === id)
 
   const handleAgregar = () => {
     if (!producto) return
@@ -34,7 +34,7 @@ export default function ProductoDetalle() {
     )
   }
 
-  const relacionados = productosDemo
+  const relacionados = leerProductos()
     .filter((p) => p.id !== producto.id && p.categoria === producto.categoria)
     .slice(0, 3)
 

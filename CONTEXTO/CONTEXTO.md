@@ -2,6 +2,25 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Etapa 4: Panel de administración
+
+### Qué se hizo
+- Creado `src/services/productosService.ts`: CRUD de productos en localStorage (leer/crear/actualizar/eliminar).
+- `pedidosService.ts`: agregada función `cambiarEstadoPedido` + hook `usePedidosConRecarga`.
+- Creado componente **ProductoForm** (modal crear/editar con validación).
+- Creada página **Admin** (`/admin`):
+  - Barra lateral con 3 vistas: Dashboard, Productos, Pedidos.
+  - Dashboard: tarjetas de ventas totales, pedidos, productos, stock; pedidos recientes y stock bajo.
+  - Productos: tabla con CRUD completo (crear, editar, eliminar, activar/inactivar).
+  - Pedidos: cambio de estado (Pendiente→Enviado→Entregado/Cancelado).
+- Catálogo, Home y Detalle ahora leen de `leerProductos()` (reflejan cambios del admin y respetan `activo`).
+- Aplicado **code-splitting** con React.lazy (chunk por página).
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Etapa 5: conectar datos a **Firebase** (Firestore autenticado para productos, pedidos y usuarios) + Firebase Storage para imágenes + deploy en Firebase Hosting.
+- Completar `PROYECTO/.env` con las claves reales del proyecto de Firebase.
+
 ## 2026-09-10 - Etapa 4: Historial de pedidos
 
 ### Qué se hizo

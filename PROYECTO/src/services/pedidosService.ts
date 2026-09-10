@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import type { Pedido } from '../types'
+import type { EstadoPedido, Pedido } from '../types'
 
 const STORAGE_KEY = 'techstore_pedidos'
 
@@ -19,6 +19,11 @@ export const leerPedidos = (): Pedido[] => {
   }
 }
 
+export const cambiarEstadoPedido = (id: string, estado: EstadoPedido) => {
+  const pedidos = leerPedidos().map((p) => (p.id === id ? { ...p, estado } : p))
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(pedidos))
+}
+
 export function usePedidos() {
   const [pedidos, setPedidos] = useState<Pedido[]>([])
 
@@ -30,4 +35,18 @@ export function usePedidos() {
   }, [])
 
   return pedidos
+}
+
+export function usePedidosConRecarga() {
+  const [pedidos, setPedidos] = useState<Pedido[]>(leerPedidos)
+
+  const recargar = () => setPedidos(leerPedidos())
+
+  useEffect(() => {
+    const handle = () => setPedidos(leerPedidos())
+    window.addEventListener('storage', handle)
+    return () => window.removeEventListener('storage', handle)
+  }, [])
+
+  return { pedidos, recargar }
 }
