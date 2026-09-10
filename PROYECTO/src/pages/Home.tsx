@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import ProductCard from '../components/products/ProductCard'
+import Marcas from '../components/ui/Marcas'
 import Parallax from '../components/ui/Parallax'
 import Reveal from '../components/ui/Reveal'
 import Testimonios from '../components/ui/Testimonios'
@@ -72,6 +73,9 @@ export default function Home() {
           </svg>
         </div>
       </section>
+
+      {/* ===== Marcas ===== */}
+      <Marcas />
 
       {/* ===== Beneficios ===== */}
       <section className="border-b border-wood-100 bg-cream">

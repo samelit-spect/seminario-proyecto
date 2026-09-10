@@ -2,6 +2,17 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Mejora visual 13: Marcas
+
+### Qué se hizo
+- Creado `src/components/ui/Marcas.tsx`: franja de marcas con **marquesina animada** (scroll infinito de logos textuales: Apple, Samsung, Sony, Xiaomi, HP, Logitech, Lenovo, Motorola, JBL, Philips), pausa al pasar el mouse y desvanecido en los bordes.
+- Agregada animación `--animate-marquee` con keyframes `marquee` en `index.css`.
+- Insertada en la Home entre el Hero y la sección de Beneficios.
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Mejora visual 14 (consultar al usuario antes de avanzar).
+
 ## 2026-09-10 - Mejora visual 12: Testimonios
 
 ### Qué se hizo
