@@ -2,6 +2,16 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Mejora visual 17: Botón de WhatsApp flotante
+
+### Qué se hizo
+- Creado `src/components/ui/BotonWhatsapp.tsx`: botón flotante (abajo a la derecha) con logo de WhatsApp en verde, **anillo de pulso animado** (`--animate-pulse-ring`), tooltip "¿Tenés dudas? Escribinos" al hover y enlace directo a `wa.me` con mensaje predefinido.
+- Montado en `Layout.tsx` (visible en todas las páginas). Número de WhatsApp de ejemplo configurable.
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Mejora visual restante de la lista (consultar al usuario antes de avanzar): quedan contador de visitas, toast al agregar, skeletons, newsletter, métodos de pago, mapa, retiro en tienda y comparar productos.
+
 ## 2026-09-10 - Mejora visual 15: Badges "Nuevo" / "Oferta"
 
 ### Qué se hizo

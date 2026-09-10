@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom'
 
+import BotonWhatsapp from '../ui/BotonWhatsapp'
 import CartDrawer from './CartDrawer'
 import Footer from './Footer'
 import Navbar from './Navbar'
@@ -13,6 +14,7 @@ export default function Layout() {
       </main>
       <Footer />
       <CartDrawer />
+      <BotonWhatsapp />
     </div>
   )
 }
