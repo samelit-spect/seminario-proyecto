@@ -2,6 +2,17 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Inicio Etapa 4 (Desarrollo): proyecto React inicializado
+
+### Qué se hizo
+- Se inicializó el proyecto React + TypeScript con Vite en `PROYECTO/` (`npm create vite@latest -- --template react-ts`).
+- `npm install` y verificación: `npm run build` compila correctamente (Vite v8).
+
+### Próximos pasos
+- Instalar y configurar Tailwind CSS.
+- Crear estructura de carpetas (components, pages, context, services, types, hooks).
+- Instalar dependencias: react-router-dom, firebase.
+
 ## 2026-09-10 - Etapa 3 (Diseño del sistema)
 
 ### Qué se hizo
