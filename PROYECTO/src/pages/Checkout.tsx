@@ -13,6 +13,7 @@ export default function Checkout() {
   const { items, total, vaciar } = useCart()
   const [confirmado, setConfirmado] = useState(false)
   const [numPedido, setNumPedido] = useState('')
+  const [emailEnviado, setEmailEnviado] = useState('')
   const [formaPago, setFormaPago] = useState<'efectivo' | 'transferencia'>('efectivo')
   const [enviando, setEnviando] = useState(false)
   const [form, setForm] = useState({
@@ -33,8 +34,8 @@ export default function Checkout() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setEnviando(true)
-    // Simula la creación del pedido (se conectará a Firestore en la Etapa 5)
-    await new Promise((r) => setTimeout(r, 800))
+    // Simula el envío del correo de confirmación (se conectará a un servicio real en la Etapa 5+)
+    await new Promise((r) => setTimeout(r, 900))
     const numero = 'TS-' + Math.floor(100000 + Math.random() * 900000)
     guardarPedido({
       id: numero,
@@ -58,6 +59,9 @@ export default function Checkout() {
       },
       fecha: Date.now(),
     })
+    // Simula el envío del email de confirmación
+    await new Promise((r) => setTimeout(r, 900))
+    setEmailEnviado(form.email)
     setNumPedido(numero)
     setConfirmado(true)
     vaciar()
@@ -79,9 +83,26 @@ export default function Checkout() {
             </svg>
           </span>
           <h1 className="mt-6 font-display text-3xl text-coal-950">¡Pedido confirmado!</h1>
-          <p className="mt-2 text-coal-50">
-            Te enviamos el detalle a tu correo. El número de seguimiento es:
-          </p>
+
+          {/* Email de confirmación simulado */}
+          {emailEnviado && (
+            <div className="mx-auto mt-6 flex max-w-sm animate-fade-up items-start gap-3 rounded-2xl border border-wood-100 bg-cream-50 p-4 text-left">
+              <span className="flex h-10 w-10 shrink-0 animate-float items-center justify-center rounded-full bg-wood-500 text-chalk">
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </span>
+              <div>
+                <p className="font-medium text-coal-950">Correo enviado ✓</p>
+                <p className="text-sm text-coal-50">
+                  Enviamos el detalle de tu pedido a <span className="font-medium text-wood-700">{emailEnviado}</span>.
+                  Revisá tu bandeja de entrada (y el spam).
+                </p>
+              </div>
+            </div>
+          )}
+
+          <p className="mt-6 text-coal-50">Tu número de seguimiento es:</p>
           <p className="mt-3 inline-block rounded-xl bg-cream-100 px-6 py-3 font-mono text-lg font-bold text-wood-700">
             {numPedido}
           </p>
@@ -222,7 +243,7 @@ export default function Checkout() {
               disabled={enviando || items.length === 0}
               className="mt-7 w-full rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-7 py-3.5 font-medium text-chalk shadow-lg shadow-wood-900/20 transition-all duration-300 hover:shadow-xl hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
             >
-              {enviando ? 'Confirmando pedido...' : 'Confirmar pedido'}
+              {enviando ? 'Procesando tu pedido...' : 'Confirmar pedido'}
             </button>
 
             <Link

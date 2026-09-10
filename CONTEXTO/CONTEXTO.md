@@ -2,6 +2,17 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Mejora visual 10: Email de confirmación simulado
+
+### Qué se hizo
+- En el Checkout, la confirmación del pedido ahora **simula el envío del correo** en dos pasos (crear pedido → enviar email, ~900ms cada uno); el botón muestra "Procesando tu pedido...".
+- La pantalla de confirmación muestra un bloque "Correo enviado ✓" con el email del cliente y aviso de revisar spam, además del número de seguimiento.
+- Se conectará a un servicio de email real en etapas posteriores (Firebase + función de envío).
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Mejora visual 11 (consultar al usuario antes de avanzar).
+
 ## 2026-09-10 - Mejora visual 9: Mini-drawer de carrito
 
 ### Qué se hizo
