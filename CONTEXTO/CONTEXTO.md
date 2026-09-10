@@ -2,6 +2,22 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Etapa 3 (Diseño del sistema)
+
+### Qué se hizo
+- Se creó `ETAPA-3-DISENO/ETAPA-3-DISENO.md` con el diseño completo del sistema:
+  - Plataforma (SPA responsive)
+  - Arquitectura cliente-servidor (React + Firebase) con diagrama de componentes
+  - Base de datos Firestore (colecciones productos, usuarios, pedidos)
+  - Frontend y backend (módulos y servicios Firebase)
+  - Informes y reportes (dashboard, stock, pedidos, clientes)
+  - Seguridad (auth, reglas, roles, rutas protegidas, HTTPS)
+  - Backup (exportación Firestore, Git/GitHub)
+- Se generó el Word: `ETAPA-3-DISENO.docx`.
+
+### Próximos pasos
+- Inicializar el proyecto React + TypeScript en `PROYECTO/` y comenzar el desarrollo (Etapa 4).
+
 ## 2026-09-10 - Etapa 2 (Metodología)
 
 ### Qué se hizo
