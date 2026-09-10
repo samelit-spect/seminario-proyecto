@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 import { useCart } from '../context/CartContext'
+import Lightbox from '../components/ui/Lightbox'
 import Reveal from '../components/ui/Reveal'
 import { leerProductos } from '../services/productosService'
 
@@ -12,6 +13,7 @@ export default function ProductoDetalle() {
   const { id } = useParams()
   const [cantidad, setCantidad] = useState(1)
   const [imagenActiva, setImagenActiva] = useState(0)
+  const [lightboxAbierto, setLightboxAbierto] = useState(false)
   const [agregado, setAgregado] = useState(false)
   const { agregar } = useCart()
 
@@ -54,17 +56,26 @@ export default function ProductoDetalle() {
         <div className="grid gap-14 lg:grid-cols-2">
           {/* Galería */}
           <div className="animate-fade-in">
-            <div className="group relative overflow-hidden rounded-[2rem] bg-cream-100 shadow-lg">
+            <button
+              onClick={() => setLightboxAbierto(true)}
+              className="group relative block w-full cursor-zoom-in overflow-hidden rounded-[2rem] bg-cream-100 text-left shadow-lg"
+            >
               <img
                 key={imagenActiva}
                 src={producto.imagenes[imagenActiva]}
                 alt={producto.nombre}
-                className="h-[480px] w-full animate-zoom-in object-cover"
+                className="h-[480px] w-full animate-zoom-in object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <span className="absolute left-4 top-4 rounded-full bg-onix/70 px-4 py-1.5 text-xs font-medium text-chalk backdrop-blur-sm">
                 {producto.marca}
               </span>
-            </div>
+              <span className="absolute bottom-4 right-4 flex h-10 w-10 animate-fade-in items-center justify-center rounded-full bg-onix/70 text-chalk opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <circle cx="11" cy="11" r="8" strokeWidth={2} />
+                  <path strokeLinecap="round" strokeWidth={2} d="M21 21l-4.35-4.35M11 8v6M8 11h6" />
+                </svg>
+              </span>
+            </button>
             {producto.imagenes.length > 1 && (
               <div className="mt-4 flex gap-3">
                 {producto.imagenes.map((img, i) => (
@@ -83,6 +94,15 @@ export default function ProductoDetalle() {
               </div>
             )}
           </div>
+
+          {lightboxAbierto && (
+            <Lightbox
+              imagenes={producto.imagenes}
+              indice={imagenActiva}
+              alCerrar={() => setLightboxAbierto(false)}
+              alCambiar={setImagenActiva}
+            />
+          )}
 
           {/* Info */}
           <Reveal delay={150}>

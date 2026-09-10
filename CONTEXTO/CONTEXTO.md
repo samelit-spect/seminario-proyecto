@@ -2,6 +2,19 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Mejora visual 5: Lightbox en galería
+
+### Qué se hizo
+- Creado `src/components/ui/Lightbox.tsx`: visor de imagen a pantalla completa.
+  - Fondo oscuro `bg-onix/95` con blur, cierre con botón, clic fuera o tecla `Esc`.
+  - Navegación con flechas ‹ › o teclas `←`/`→`, contador "n / total".
+  - Bloquea el scroll del body mientras está abierto.
+- Integrado en **ProductoDetalle**: la imagen principal ahora es clicable (cursor zoom, icono de lupa al hover), abre el lightbox sincronizado con la imagen activa y las thumbnails.
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Mejora visual 6 (consultar al usuario antes de avanzar).
+
 ## 2026-09-10 - Mejora visual 4: Efecto parallax
 
 ### Qué se hizo
