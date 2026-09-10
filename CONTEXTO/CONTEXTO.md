@@ -2,6 +2,20 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Etapa 4: Páginas Login y Registro
+
+### Qué se hizo
+- Creada página **Login** (`/login`): fondo oscuro elegante, formulario de email/contraseña, botón "Continuar con Google", manejo de errores y redirección.
+- Creada página **Registro** (`/registro`): nombre, email, contraseña (mín. 6) y confirmación con validación.
+- Navbar ahora muestra según sesión: usuario con avatar + menú para cerrar sesión, o botones "Ingresar"/"Registrarse".
+- **Verificado:** `npm run build` OK.
+- Nota: auth requiere las claves de Firebase en `.env` para funcionar en producción.
+
+### Próximos pasos
+- Página **Checkout** con datos de envío y confirmación del pedido.
+- Mi perfil / historial de pedidos.
+- Panel de administración (admin).
+
 ## 2026-09-10 - Etapa 4: Página Carrito
 
 ### Qué se hizo

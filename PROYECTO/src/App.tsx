@@ -4,8 +4,10 @@ import Layout from './components/layout/Layout'
 import Carrito from './pages/Carrito'
 import Catalogo from './pages/Catalogo'
 import Home from './pages/Home'
+import Login from './pages/Login'
 import Nosotros from './pages/Nosotros'
 import ProductoDetalle from './pages/ProductoDetalle'
+import Registro from './pages/Registro'
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/carrito" element={<Carrito />} />
         </Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/registro" element={<Registro />} />
       </Routes>
     </BrowserRouter>
   )

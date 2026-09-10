@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
+import { useAuth } from '../../context/AuthContext'
 import { useCart } from '../../context/CartContext'
 
 const links = [
@@ -14,6 +15,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
   const { pathname } = useLocation()
   const { cantidadTotal } = useCart()
+  const { usuario, cargando, logout } = useAuth()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -75,11 +77,51 @@ export default function Navbar() {
               </span>
             )}
           </Link>
+          {usuario ? (
+            <div className="group relative">
+              <button
+                className="flex items-center gap-2 rounded-full bg-cream/10 px-4 py-2 text-sm text-cream transition-colors duration-300 hover:bg-cream/20"
+                onClick={() => logout()}
+              >
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-wood-300 to-wood-700 text-xs font-bold text-cream">
+                  {usuario.nombre.charAt(0).toUpperCase()}
+                </span>
+                {usuario.nombre}
+              </button>
+              <span className="pointer-events-none absolute right-0 top-full mt-2 hidden rounded-xl bg-coal-950 px-4 py-3 text-xs text-cream/80 shadow-xl ring-1 ring-cream/10 group-hover:block">
+                Sesión de {usuario.email}
+                <br />
+                <button
+                  className="mt-1 font-medium text-wood-300 hover:text-wood-100"
+                  onClick={() => logout()}
+                >
+                  Cerrar sesión
+                </button>
+              </span>
+            </div>
+          ) : (
+            !cargando && (
+              <div className="flex items-center gap-2">
+                <Link
+                  to="/login"
+                  className="rounded-full border border-cream/20 px-5 py-2 text-sm text-cream/80 transition-all duration-300 hover:border-cream/50 hover:text-cream"
+                >
+                  Ingresar
+                </Link>
+                <Link
+                  to="/registro"
+                  className="rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-5 py-2 text-sm font-medium text-cream shadow-lg shadow-wood-900/20 transition-all duration-300 hover:shadow-xl hover:brightness-110"
+                >
+                  Registrarse
+                </Link>
+              </div>
+            )
+          )}
           <Link
             to="/admin"
-            className="rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-5 py-2 text-sm font-medium text-cream shadow-lg shadow-wood-900/20 transition-all duration-300 hover:shadow-xl hover:shadow-wood-900/40 hover:brightness-110"
+            className="hidden rounded-full bg-cream/10 px-4 py-2 text-sm text-cream/70 transition-all duration-300 hover:bg-cream/20 hover:text-cream xl:block"
           >
-            Administrar
+            Admin
           </Link>
         </div>
 
