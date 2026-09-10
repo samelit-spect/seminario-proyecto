@@ -2,6 +2,18 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Mejora visual 6: Búsqueda predictiva
+
+### Qué se hizo
+- Agregada **búsqueda predictiva** en el Catálogo: al escribir, se muestra un dropdown en vivo con hasta 6 sugerencias (productos activos que coinciden por nombre o categoría).
+- Cada sugerencia muestra imagen, nombre, categoría y precio; al hacer clic navega al detalle del producto (`/producto/:id`).
+- Fila inferior "Ver todos los resultados de '...' →" que aplica la búsqueda al grid y mantiene el foco en el input.
+- Cierre del dropdown al perder foco (con delay para permitir clic), `autoComplete="off"`, y `onMouseDown` preventDefault para evitar que el blur cierre antes del clic.
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Mejora visual 7 (consultar al usuario antes de avanzar).
+
 ## 2026-09-10 - Mejora visual 5: Lightbox en galería
 
 ### Qué se hizo
