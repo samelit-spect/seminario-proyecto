@@ -2,6 +2,20 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Etapa 4: Contextos de Carrito y Autenticación
+
+### Qué se hizo
+- **CartContext** (`src/context/CartContext.tsx`): carrito con persistencia en localStorage, agregar/quitar/cambiarCantidad/vaciar, cantidadTotal y total.
+- **AuthContext** (`src/context/AuthContext.tsx`): autenticación con Firebase Auth (login email/contraseña, registro con displayName, Google, logout, estado de sesión).
+- Botón "Agregar al carrito" en ProductoDetalle conectado al contexto (feedback "¡Agregado!" en verde).
+- Navbar con badge de contador de items del carrito.
+- Providers envueltos en `main.tsx`.
+- **Verificado:** `npm run build` OK. Nota: bundle grande (Firebase ~778 kB), pendiente code-splitting.
+
+### Próximos pasos
+- Página **Carrito** (`/carrito`) con lista, modificación de cantidades y resumen.
+- Páginas **Login/Registro** y **Checkout**.
+
 ## 2026-09-10 - Etapa 4: Detalle de producto y página Nosotros
 
 ### Qué se hizo

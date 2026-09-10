@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
+import { useCart } from '../context/CartContext'
 import { productosDemo } from '../data/productos'
 
 const precioFormateado = (n: number) =>
@@ -10,8 +11,17 @@ export default function ProductoDetalle() {
   const { id } = useParams()
   const [cantidad, setCantidad] = useState(1)
   const [imagenActiva, setImagenActiva] = useState(0)
+  const [agregado, setAgregado] = useState(false)
+  const { agregar } = useCart()
 
   const producto = productosDemo.find((p) => p.id === id)
+
+  const handleAgregar = () => {
+    if (!producto) return
+    agregar(producto, cantidad)
+    setAgregado(true)
+    setTimeout(() => setAgregado(false), 2000)
+  }
 
   if (!producto) {
     return (
@@ -119,11 +129,22 @@ export default function ProductoDetalle() {
                 </button>
               </div>
 
-              <button className="group inline-flex flex-1 items-center justify-center gap-3 rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-8 py-3.5 font-medium text-cream shadow-lg shadow-wood-900/20 transition-all duration-300 hover:shadow-xl hover:brightness-110 sm:flex-none">
+              <button
+                onClick={handleAgregar}
+                className={`group inline-flex flex-1 items-center justify-center gap-3 rounded-full px-8 py-3.5 font-medium text-cream shadow-lg transition-all duration-300 hover:shadow-xl sm:flex-none ${
+                  agregado
+                    ? 'bg-emerald-600'
+                    : 'bg-gradient-to-r from-wood-500 to-wood-700 hover:brightness-110'
+                }`}
+              >
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                  {agregado ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                  )}
                 </svg>
-                Agregar al carrito
+                {agregado ? '¡Agregado al carrito!' : 'Agregar al carrito'}
               </button>
             </div>
 

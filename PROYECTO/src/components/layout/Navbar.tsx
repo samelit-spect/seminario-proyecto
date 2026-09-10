@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
+import { useCart } from '../../context/CartContext'
+
 const links = [
   { to: '/', label: 'Inicio' },
   { to: '/catalogo', label: 'Catálogo' },
@@ -11,6 +13,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const { pathname } = useLocation()
+  const { cantidadTotal } = useCart()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -66,6 +69,11 @@ export default function Navbar() {
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
             </svg>
+            {cantidadTotal > 0 && (
+              <span className="absolute -right-1 -top-1 flex h-5 w-5 animate-zoom-in items-center justify-center rounded-full bg-wood-500 text-[10px] font-bold text-cream">
+                {cantidadTotal}
+              </span>
+            )}
           </Link>
           <Link
             to="/admin"
