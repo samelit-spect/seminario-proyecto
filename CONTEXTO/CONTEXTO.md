@@ -2,6 +2,19 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Mejora visual 15: Badges "Nuevo" / "Oferta"
+
+### Qué se hizo
+- Agregado campo opcional `precioOriginal?: number` al tipo `Producto` (usado para ofertas).
+- `ProductCard`: badge verde "Nuevo" si el producto tiene menos de 30 días, badge rojo con % de descuento si tiene `precioOriginal`, y precio tachado. Se ve en Home, Catálogo y relacionados.
+- `ProductoDetalle`: precio original tachado + badge de % junto al precio.
+- Seed actualizado: 3 productos con descuento y fechas variadas (algunos recientes, otros antiguos) para que los badges tengan sentido.
+- **Nota:** si ya hay datos guardados en el navegador (localStorage `techstore_productos`), hay que borrar esa clave para que el seed nuevo aplique.
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Mejora visual 16 (consultar al usuario antes de avanzar).
+
 ## 2026-09-10 - Mejora visual 14: FAQ
 
 ### Qué se hizo

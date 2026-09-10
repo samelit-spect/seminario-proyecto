@@ -1,6 +1,8 @@
 // Datos de demostración para el desarrollo (se reemplazarán por Firebase)
 import type { Producto } from '../types'
 
+const DIA = 24 * 60 * 60 * 1000
+
 export const productosDemo: Producto[] = [
   {
     id: '1',
@@ -8,6 +10,7 @@ export const productosDemo: Producto[] = [
     descripcion:
       'Auriculares circumaurales con acabado en madera noble y drivers de 45mm. Sonido cálido y fiel para uso profesional.',
     precio: 189000,
+    precioOriginal: 220000,
     categoria: 'Audio',
     marca: 'ToneWood',
     stock: 12,
@@ -15,7 +18,7 @@ export const productosDemo: Producto[] = [
       'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=700&q=80',
     ],
     activo: true,
-    creadoEn: Date.now(),
+    creadoEn: Date.now() - 6 * DIA,
   },
   {
     id: '2',
@@ -30,7 +33,7 @@ export const productosDemo: Producto[] = [
       'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=700&q=80',
     ],
     activo: true,
-    creadoEn: Date.now(),
+    creadoEn: Date.now() - 120 * DIA,
   },
   {
     id: '3',
@@ -38,6 +41,7 @@ export const productosDemo: Producto[] = [
     descripcion:
       'Ultrabook de aluminio con procesador de última generación, 16GB RAM y SSD de 512GB. Rendimiento sin concesiones.',
     precio: 1520000,
+    precioOriginal: 1750000,
     categoria: 'Computación',
     marca: 'Wrenn',
     stock: 5,
@@ -45,7 +49,7 @@ export const productosDemo: Producto[] = [
       'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=700&q=80',
     ],
     activo: true,
-    creadoEn: Date.now(),
+    creadoEn: Date.now() - 45 * DIA,
   },
   {
     id: '4',
@@ -60,7 +64,7 @@ export const productosDemo: Producto[] = [
       'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=700&q=80',
     ],
     activo: true,
-    creadoEn: Date.now(),
+    creadoEn: Date.now() - 5 * DIA,
   },
   {
     id: '5',
@@ -68,6 +72,7 @@ export const productosDemo: Producto[] = [
     descripcion:
       'Parlante portátil con sonido 360°, batería de 20 horas y resistencia al agua IPX7. Llevá tu música a todas partes.',
     precio: 62000,
+    precioOriginal: 80000,
     categoria: 'Audio',
     marca: 'ToneWood',
     stock: 15,
@@ -75,7 +80,7 @@ export const productosDemo: Producto[] = [
       'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=700&q=80',
     ],
     activo: true,
-    creadoEn: Date.now(),
+    creadoEn: Date.now() - 200 * DIA,
   },
   {
     id: '6',
@@ -90,7 +95,7 @@ export const productosDemo: Producto[] = [
       'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=700&q=80',
     ],
     activo: true,
-    creadoEn: Date.now(),
+    creadoEn: Date.now() - 8 * DIA,
   },
 ]
 

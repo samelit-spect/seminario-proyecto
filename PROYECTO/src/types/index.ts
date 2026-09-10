@@ -5,6 +5,7 @@ export interface Producto {
   nombre: string
   descripcion: string
   precio: number
+  precioOriginal?: number
   categoria: string
   marca: string
   stock: number

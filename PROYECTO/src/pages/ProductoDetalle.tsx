@@ -119,9 +119,21 @@ export default function ProductoDetalle() {
               <span>(24 reseñas)</span>
             </div>
 
-            <p className="mt-6 text-lg font-semibold text-wood-700">
-              {precioFormateado(producto.precio)}
-            </p>
+            <div className="mt-6 flex items-end gap-3">
+              {producto.precioOriginal && producto.precioOriginal > producto.precio && (
+                <>
+                  <p className="text-lg text-coal-50 line-through">
+                    {precioFormateado(producto.precioOriginal)}
+                  </p>
+                  <span className="mb-0.5 rounded-full bg-red-500 px-2.5 py-0.5 text-xs font-semibold text-white">
+                    −{Math.round(((producto.precioOriginal - producto.precio) / producto.precioOriginal) * 100)}%
+                  </span>
+                </>
+              )}
+              <p className="text-3xl font-bold text-wood-700">
+                {precioFormateado(producto.precio)}
+              </p>
+            </div>
 
             <div className="mt-4 flex items-center gap-2 text-sm">
               <span className={`flex h-2.5 w-2.5 rounded-full ${producto.stock > 0 ? 'bg-emerald-500' : 'bg-red-400'}`} />
