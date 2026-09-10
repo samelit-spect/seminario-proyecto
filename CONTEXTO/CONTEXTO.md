@@ -2,6 +2,20 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Etapa 4: Página Checkout
+
+### Qué se hizo
+- Creada página **Checkout** (`/checkout`):
+  - Formulario en 3 pasos visuales: datos personales, dirección de envío y forma de pago (efectivo/transferencia).
+  - Resumen del pedido sticky (items, subtotal, total).
+  - Confirmación de pedido con número de seguimiento "TS-xxxxxx" y estado "Pendiente" (simulado; se conectará a Firestore en la Etapa 5).
+  - Clase `.field` para inputs uniformes.
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Mi perfil / historial de pedidos.
+- Panel de administración (admin): dashboard, CRUD productos, gestión de pedidos.
+
 ## 2026-09-10 - Etapa 4: Páginas Login y Registro
 
 ### Qué se hizo

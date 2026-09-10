@@ -88,3 +88,20 @@ body {
   background-image: radial-gradient(rgba(110, 72, 39, 0.08) 1px, transparent 1px);
   background-size: 22px 22px;
 }
+
+/* Campo de formulario estándar */
+.field {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-wood-100);
+  background: var(--color-cream-50);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  outline: none;
+  transition: all 0.3s;
+}
+.field::placeholder { color: #9ca3af; }
+.field:focus {
+  border-color: var(--color-wood-500);
+  box-shadow: 0 0 0 3px rgba(165, 117, 74, 0.15);
+}

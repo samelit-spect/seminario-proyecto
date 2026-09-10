@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './components/layout/Layout'
 import Carrito from './pages/Carrito'
 import Catalogo from './pages/Catalogo'
+import Checkout from './pages/Checkout'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Nosotros from './pages/Nosotros'
@@ -19,6 +20,7 @@ function App() {
           <Route path="/producto/:id" element={<ProductoDetalle />} />
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/carrito" element={<Carrito />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Registro />} />
