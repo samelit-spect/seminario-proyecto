@@ -2,6 +2,22 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Etapa 4: Página Carrito
+
+### Qué se hizo
+- Creada página **Carrito** (`/carrito`):
+  - Estado vacío elegante con CTA al catálogo.
+  - Lista de items con foto, modificar cantidad, eliminar y subtotal por item.
+  - Resumen con subtotal, envío, total y botón "Finalizar compra".
+  - Botón "Vaciar carrito".
+- Ruta agregada en `App.tsx`.
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Páginas **Login/Registro** (auth).
+- Página **Checkout** con datos de envío y confirmación de pedido.
+- Panel de administración.
+
 ## 2026-09-10 - Etapa 4: Contextos de Carrito y Autenticación
 
 ### Qué se hizo

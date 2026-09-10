@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import Layout from './components/layout/Layout'
+import Carrito from './pages/Carrito'
 import Catalogo from './pages/Catalogo'
 import Home from './pages/Home'
 import Nosotros from './pages/Nosotros'
@@ -15,6 +16,7 @@ function App() {
           <Route path="/catalogo" element={<Catalogo />} />
           <Route path="/producto/:id" element={<ProductoDetalle />} />
           <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/carrito" element={<Carrito />} />
         </Route>
       </Routes>
     </BrowserRouter>
