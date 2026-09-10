@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechStore - Catálogo (Wireframe)</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="wf-page">
+
+<header class="wf-topbar">
+  <div class="logo">Tech<span>Store</span></div>
+  <nav class="wf-nav">
+    <a href="index.html">Home</a>
+    <a href="catalog.html" class="active">Catálogo</a>
+    <a href="product.html">Detalle</a>
+    <a href="cart.html">Carrito</a>
+    <a href="checkout.html">Checkout</a>
+    <a href="login.html">Login</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+  <div class="wf-search"><input placeholder="Buscar productos..." disabled></div>
+</header>
+
+<div class="catalog-layout">
+  <aside class="filters wf-fake">
+    <h3>Filtros</h3>
+    <label>Categoría</label>
+    <select disabled><option>Todas</option></select>
+    <label>Precio máx.</label>
+    <input type="range" disabled>
+    <label>Marca</label>
+    <select disabled><option>Todas</option></select>
+  </aside>
+
+  <main>
+    <div class="catalog-head">
+      <h2>Catálogo de productos</h2>
+      <p>12 productos</p>
+    </div>
+    <div class="wf-grid-3" id="grid"></div>
+  </main>
+</div>
+
+<footer class="wf-footer">TechStore - Wireframe ETAPA 1</footer>
+
+<script>
+const prods = [
+  ['Smartphone X10','$450.000','1e40af'], ['Notebook Pro 15"','$890.000','0f766e'],
+  ['Auriculares ANC','$120.000','7c3aed'], ['Teclado mecánico','$85.000','b91c1c'],
+  ['Mouse gamer','$45.000','be123c'], ['Monitor 27"','$320.000','15803d'],
+  ['Smartwatch S2','$180.000','a16207'], ['Cámara web HD','$60.000','4f46e5'],
+  ['Parlante BT','$70.000','0e7490'], ['Tablet 10"','$210.000','86198f'],
+  ['Cargador inalámbrico','$25.000','b45309'], ['SSD 1TB','$95.000','166534'],
+];
+const grid = document.getElementById('grid');
+grid.innerHTML = prods.map(p => `
+  <div class="card product-card wf-fake">
+    <img src="https://placehold.co/200x140/${p[2]}/ffffff?text=${encodeURIComponent(p[0])}" alt="${p[0]}">
+    <h3>${p[0]}</h3>
+    <p class="price">${p[1]}</p>
+    <button class="btn" disabled>Agregar</button>
+  </div>`).join('');
+</script>
+</body>
+</html>

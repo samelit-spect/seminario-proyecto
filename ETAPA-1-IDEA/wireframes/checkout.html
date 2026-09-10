@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechStore - Checkout (Wireframe)</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="wf-page">
+
+<header class="wf-topbar">
+  <div class="logo">Tech<span>Store</span></div>
+  <nav class="wf-nav">
+    <a href="index.html">Home</a>
+    <a href="catalog.html">Catálogo</a>
+    <a href="product.html">Detalle</a>
+    <a href="cart.html">Carrito</a>
+    <a href="checkout.html" class="active">Checkout</a>
+    <a href="login.html">Login</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+  <div class="wf-search"><input placeholder="Buscar productos..." disabled></div>
+</header>
+
+<div class="checkout-layout">
+  <main class="form wf-fake">
+    <h2>Datos de envío</h2>
+    <div class="form-grid">
+      <input placeholder="Nombre y apellido" disabled>
+      <input placeholder="DNI" disabled>
+      <input placeholder="Teléfono" disabled>
+      <input placeholder="Correo" disabled>
+    </div>
+    <div class="form-grid">
+      <input placeholder="Calle" disabled>
+      <input placeholder="Número" disabled>
+      <input placeholder="Ciudad" disabled>
+      <input placeholder="Código postal" disabled>
+    </div>
+    <h2>Forma de pago</h2>
+    <div class="radio wf-fake">
+      <label><input type="radio" checked disabled> Pago en efectivo al recibir</label>
+      <label><input type="radio" disabled> Transferencia bancaria</label>
+    </div>
+  </main>
+
+  <aside class="summary card wf-fake">
+    <h3>Tu pedido</h3>
+    <p>Smartphone X10</p>
+    <p>Auriculares ANC ×2</p>
+    <hr>
+    <p>Subtotal: <b>$690.000</b></p>
+    <p>Envío: <b>A calcular</b></p>
+    <p>Total: <b>$690.000 + envío</b></p>
+    <button class="btn primary" disabled>Confirmar pedido ✓</button>
+  </aside>
+</div>
+
+<footer class="wf-footer">TechStore - Wireframe ETAPA 1</footer>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechStore - Home (Wireframe)</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="wf-page">
+
+<header class="wf-topbar">
+  <div class="logo">Tech<span>Store</span></div>
+  <nav class="wf-nav" title="Navegación entre pantallas del wireframe">
+    <a href="index.html" class="active">Home</a>
+    <a href="catalog.html">Catálogo</a>
+    <a href="product.html">Detalle</a>
+    <a href="cart.html">Carrito</a>
+    <a href="checkout.html">Checkout</a>
+    <a href="login.html">Login</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+  <div class="wf-search"><input placeholder="Buscar productos..." disabled></div>
+</header>
+
+<section class="hero wf-fake">
+  <div class="hero-text">
+    <h1>Electrónica al mejor precio</h1>
+    <p>Celulares, notebooks y accesorios con envío a todo el país.</p>
+  </div>
+  <img src="https://placehold.co/480x300/1e293b/ffffff?text=Hero+Image" alt="placeholder hero">
+</section>
+
+<section class="wf-section">
+  <h2>Categorías</h2>
+  <div class="wf-grid-4">
+    <div class="card wf-fake">Celulares</div>
+    <div class="card wf-fake">Notebooks</div>
+    <div class="card wf-fake">Auriculares</div>
+    <div class="card wf-fake">Periféricos</div>
+  </div>
+</section>
+
+<section class="wf-section">
+  <div class="sec-head">
+    <h2>Productos destacados</h2>
+    <a href="catalog.html">Ver todos →</a>
+  </div>
+  <div class="wf-grid-3" id="destacados"></div>
+</section>
+
+<footer class="wf-footer">TechStore - Wireframe ETAPA 1</footer>
+
+<script>
+const productos = [
+  {img:'https://placehold.co/200x140/1e40af/ffffff?text=Smartphone', nombre:'Smartphone X10', precio:'$450.000'},
+  {img:'https://placehold.co/200x140/0f766e/ffffff?text=Notebook', nombre:'Notebook Pro 15"', precio:'$890.000'},
+  {img:'https://placehold.co/200x140/7c3aed/ffffff?text="Auriculares"', nombre:'Auriculares ANC', precio:'$120.000'},
+  {img:'https://placehold.co/200x140/b91c1c/ffffff?text=Teclado', nombre:'Teclado mecánico', precio:'$85.000'},
+  {img:'https://placehold.co/200x140/be123c/ffffff?text=Mouse', nombre:'Mouse gamer', precio:'$45.000'},
+  {img:'https://placehold.co/200x140/15803d/ffffff?text=Monitor', nombre:'Monitor 27"', precio:'$320.000'},
+];
+const grid = document.getElementById('destacados');
+grid.innerHTML = productos.map(p => `
+  <div class="card product-card wf-fake">
+    <img src="${p.img}" alt="${p.nombre}">
+    <h3>${p.nombre}</h3>
+    <p class="price">${p.precio}</p>
+  </div>`).join('');
+</script>
+</body>
+</html>

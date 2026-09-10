@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechStore - Carrito (Wireframe)</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="wf-page cart-page">
+
+<header class="wf-topbar">
+  <div class="logo">Tech<span>Store</span></div>
+  <nav class="wf-nav">
+    <a href="index.html">Home</a>
+    <a href="catalog.html">Catálogo</a>
+    <a href="product.html">Detalle</a>
+    <a href="cart.html" class="active">Carrito</a>
+    <a href="checkout.html">Checkout</a>
+    <a href="login.html">Login</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+  <div class="wf-search"><input placeholder="Buscar productos..." disabled></div>
+</header>
+
+<div class="cart-layout">
+  <main class="cart-items">
+    <h2>Carrito de compras (2)</h2>
+    <div class="cart-item card">
+      <img src="https://placehold.co/90x70/1e40af/ffffff?text=X10" alt="">
+      <div>
+        <h3>Smartphone X10</h3>
+        <p>$450.000 c/u</p>
+      </div>
+      <div class="qty wf-fake"><button disabled>−</button><span>1</span><button disabled>+</button></div>
+      <p class="unit-total">$450.000</p>
+      <button class="remove" disabled>Eliminar ✕</button>
+    </div>
+    <div class="cart-item card">
+      <img src="https://placehold.co/90x70/7c3aed/ffffff?text=ANC" alt="">
+      <div>
+        <h3>Auriculares ANC</h3>
+        <p>$120.000 c/u</p>
+      </div>
+      <div class="qty wf-fake"><button disabled>−</button><span>2</span><button disabled>+</button></div>
+      <p class="unit-total">$240.000</p>
+      <button class="remove" disabled>Eliminar ✕</button>
+    </div>
+  </main>
+
+  <aside class="summary card wf-fake">
+    <h3>Resumen</h3>
+    <p>Subtotal: <b>$690.000</b></p>
+    <p>Envío: <b>A calcular</b></p>
+    <hr>
+    <p>Total: <b>$690.000 + envío</b></p>
+    <button class="btn primary" disabled>Finalizar compra →</button>
+    <a href="catalog.html">← Seguir comprando</a>
+  </aside>
+</div>
+
+<footer class="wf-footer">TechStore - Wireframe ETAPA 1</footer>
+</body>
+</html>

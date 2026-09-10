@@ -2,6 +2,27 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Wireframes de la Etapa 1
+
+### Qué se hizo
+- Se crearon 7 pantallas navegables (HTML + CSS) en `ETAPA-1-IDEA/wireframes/`:
+  - `index.html` (Home con hero y destacados)
+  - `catalog.html` (catálogo con filtros)
+  - `product.html` (detalle de producto)
+  - `cart.html` (carrito de compras)
+  - `checkout.html` (checkout con datos de envío)
+  - `login.html` (inicio de sesión)
+  - `admin.html` (panel de administración con dashboard)
+- Estilos compartidos en `styles.css` (design system oscuro/accent azul).
+
+### Decisión tomada
+- Los wireframes se hicieron como HTML navegables (más visual para la presentación) en lugar de solo texto.
+- Se usarán como base visual para el desarrollo real en React.
+
+### Próximos pasos
+- Generar el `.docx` de la Etapa 1 a partir del ETAPA-1-IDEA.md (para entregar).
+- Empezar Etapa 2: elegir y justificar la metodología.
+
 ## 2026-09-10 - Inicio Etapa 1 (Idea del proyecto)
 
 ### Qué se hizo

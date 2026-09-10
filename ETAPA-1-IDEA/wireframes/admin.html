@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechStore - Panel Admin (Wireframe)</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="wf-page admin-page">
+
+<header class="wf-topbar">
+  <div class="logo">Tech<span>Store</span></div>
+  <nav class="wf-nav">
+    <a href="index.html">Home</a>
+    <a href="catalog.html">Catálogo</a>
+    <a href="product.html">Detalle</a>
+    <a href="cart.html">Carrito</a>
+    <a href="checkout.html">Checkout</a>
+    <a href="login.html">Login</a>
+    <a href="admin.html" class="active">Admin</a>
+  </nav>
+  <div class="wf-search"><input placeholder="Buscar productos..." disabled></div>
+</header>
+
+<div class="admin-layout">
+  <aside class="sidebar wf-fake">
+    <h3>Panel de administración</h3>
+    <ul>
+      <li class="active">📊 Dashboard</li>
+      <li>📦 Productos</li>
+      <li>🧾 Pedidos</li>
+      <li>👥 Usuarios</li>
+      <li>⚙️ Configuración</li>
+    </ul>
+  </aside>
+
+  <main class="admin-main">
+    <h2>Dashboard</h2>
+    <div class="wf-grid-4 stats">
+      <div class="card wf-fake"><h4>Ventas hoy</h4><p>$1.200.000</p></div>
+      <div class="card wf-fake"><h4>Pedidos</h4><p>23</p></div>
+      <div class="card wf-fake"><h4>Productos</h4><p>45</p></div>
+      <div class="card wf-fake"><h4>Clientes</h4><p>120</p></div>
+    </div>
+
+    <div class="wf-grid-2">
+      <div class="card wf-fake">
+        <h3>Pedidos recientes</h3>
+        <table>
+          <tr><th>Nº</th><th>Cliente</th><th>Total</th><th>Estado</th></tr>
+          <tr><td>001</td><td>Martín R.</td><td>$450.000</td><td class="ok">Pendiente</td></tr>
+          <tr><td>002</td><td>Lucía P.</td><td>$240.000</td><td class="warn">Enviado</td></tr>
+          <tr><td>003</td><td>Juan D.</td><td>$85.000</td><td class="ok">Entregado</td></tr>
+        </table>
+      </div>
+      <div class="card wf-fake">
+        <h3>Stock bajo</h3>
+        <ul>
+          <li>Smartphone X10 — 3 uds</li>
+          <li>Mouse gamer — 2 uds</li>
+          <li>Cargador inalámbrico — 5 uds</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</div>
+
+<footer class="wf-footer">TechStore - Wireframe ETAPA 1</footer>
+</body>
+</html>
