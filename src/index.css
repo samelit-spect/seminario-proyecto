@@ -1,33 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
 @import 'tailwindcss';
 
 /* Dark mode por clase (toggle manual, no por preferencia del sistema) */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* ===== Paleta elegancia: blanco, madera, negro ===== */
+/* ===== Paleta clara y cálida: arena, blanco, naranja ===== */
 @theme {
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Nunito', system-ui, sans-serif;
+  --font-sans: 'Nunito', system-ui, sans-serif;
 
-  --color-cream: #faf7f2;
-  --color-cream-50: #f5efe6;
-  --color-cream-100: #ede3d2;
-  --color-cream-200: #e0d1ba;
+  --color-cream: #fff9f2;
+  --color-cream-50: #fff3e4;
+  --color-cream-100: #ffe8cd;
+  --color-cream-200: #ffdbb0;
 
-  --color-wood-100: #e7d6bf;
-  --color-wood-300: #c9a37a;
-  --color-wood-500: #a5754a;
-  --color-wood-600: #8a5d35;
-  --color-wood-700: #6f4827;
-  --color-wood-900: #3e2a18;
+  --color-wood-100: #ffd8b3;
+  --color-wood-300: #f97316;
+  --color-wood-500: #ea580c;
+  --color-wood-600: #d9480f;
+  --color-wood-700: #c2410c;
+  --color-wood-900: #7c2d12;
 
-  --color-coal-50: #6b6b6e;
-  --color-coal-900: #171719;
-  --color-coal-950: #0e0e10;
+  --color-coal-50: #78716c;
+  --color-coal-900: #292524;
+  --color-coal-950: #1c1917;
 
   /* Tokens "fijos": no cambian con el tema (superficies oscuras) */
-  --color-onix: #0a0a0c;
-  --color-chalk: #faf7f2;
+  --color-onix: #181310;
+  --color-chalk: #fff9f2;
 
   --animate-fade-up: fade-up 0.7s ease both;
   --animate-fade-in: fade-in 0.9s ease both;
@@ -73,23 +73,23 @@
 /* ===== Modo oscuro: las superficies claras se invierten automáticamente ===== */
 .dark {
   color-scheme: dark;
-  --color-cream: #131316;
-  --color-cream-50: #1b1b1f;
-  --color-cream-100: #232329;
-  --color-cream-200: #2e2e36;
+  --color-cream: #14100d;
+  --color-cream-50: #1d1712;
+  --color-cream-100: #261e16;
+  --color-cream-200: #322720;
 
-  --color-wood-100: #34343c;
-  --color-wood-300: #d4ac7e;
-  --color-wood-500: #b98a5a;
-  --color-wood-600: #c99c6a;
-  --color-wood-700: #d8b088;
-  --color-wood-900: #e7cfae;
+  --color-wood-100: #3a2e22;
+  --color-wood-300: #fb923c;
+  --color-wood-500: #f97316;
+  --color-wood-600: #ff8b3d;
+  --color-wood-700: #ffb26b;
+  --color-wood-900: #ffd8b8;
 
-  --color-coal-50: #b6b4b0;
-  --color-coal-900: #e6e2dc;
-  --color-coal-950: #f4f1ec;
+  --color-coal-50: #b8ab9c;
+  --color-coal-900: #f0e9e0;
+  --color-coal-950: #faf5ee;
 
-  --color-white: #1c1c22;
+  --color-white: #1c1712;
 }
 
 html {
@@ -140,9 +140,9 @@ html.theme-anim * {
   .reveal { opacity: 1; transform: none; }
 }
 
-/* Utilidad: degradado de texto dorado/madera */
+/* Utilidad: degradado de texto cálido/naranja */
 .text-gradient {
-  background: linear-gradient(100deg, #a5754a, #6f4827, #c9a37a);
+  background: linear-gradient(100deg, #fb923c, #c2410c, #f97316);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -150,7 +150,7 @@ html.theme-anim * {
 
 /* Grado sutil de fondo texturizado */
 .bg-grain {
-  background-image: radial-gradient(rgba(110, 72, 39, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(234, 88, 12, 0.08) 1px, transparent 1px);
   background-size: 22px 22px;
 }
 
@@ -168,5 +168,5 @@ html.theme-anim * {
 .field::placeholder { color: #9ca3af; }
 .field:focus {
   border-color: var(--color-wood-500);
-  box-shadow: 0 0 0 3px rgba(165, 117, 74, 0.15);
+  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
 }
