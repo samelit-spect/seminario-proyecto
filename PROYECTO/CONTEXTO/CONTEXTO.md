@@ -2,6 +2,18 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-12 - Reestructuración del repo para Netlify
+
+### Qué se hizo
+- Problema: Netlify publicaba la raíz del repo (todo SEMINARIO) y la app quedaba en `/proyecto/`, sin `index.html` en la raíz (404 en todo el sitio).
+- Solución: se movió la app a la **raíz del repo** (`src/`, `public/`, `package.json`, `index.html`, etc.) y se movieron `CONTEXTO/`, `DOCUMENTACION/` y `ETAPA-1` a `ETAPA-8` **dentro de `PROYECTO/`**.
+- Nueva estructura: raíz = SPA (build a `dist/`); `PROYECTO/` = documentación y etapas.
+- Actualizados `AGENTS.md`, `PLAN.md` (despliegue ahora Netlify) y esta `CONTEXTO.md`.
+- **Verificado:** `npm run build` OK desde la raíz.
+
+### Próximos pasos
+- En Netlify: dejar **Base directory** vacío, build `npm run build`, publish `dist` (el `_redirects` ya está en `public/`).
+
 ## 2026-09-10 - Mejora visual 16: Contador de visitas
 
 ### Qué se hizo

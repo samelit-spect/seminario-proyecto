@@ -6,7 +6,7 @@
 - **Frontend:** React + TypeScript + Vite
 - **Estilos:** Tailwind CSS
 - **Backend:** Firebase (Auth + Firestore + Storage)
-- **Despliegue:** Firebase Hosting
+- **Despliegue:** Netlify (SPA en la raíz del repo, `npm run build` → `dist`)
 
 ---
 
@@ -48,5 +48,5 @@
 - Proyecto 100% gratuito (plan gratuito de Firebase y herramientas open source)
 
 ## Documentación
-- Por cada etapa se genera: `ETAPA-X-NOMBRE.md` + `ETAPA-X-NOMBRE.docx`
-- Registro continuo en `CONTEXTO/`
+- Por cada etapa se genera: `ETAPA-X-NOMBRE.md` + `ETAPA-X-NOMBRE.docx` (bajo `PROYECTO/`)
+- Registro continuo en `PROYECTO/CONTEXTO/`

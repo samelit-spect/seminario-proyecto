@@ -5,10 +5,10 @@
 | Ruta | Contenido |
 |------|-----------|
 | `PLAN.md` | Plan general del proyecto |
-| `PROYECTO/` | Código fuente (React + TypeScript + Firebase) |
-| `ETAPA-1/` a `ETAPA-8/` | Una carpeta por etapa (MD + Word por presentación) |
-| `CONTEXTO/CONTEXTO.md` | Registro continuo de todo lo que hacemos |
-| `DOCUMENTACION/` | Material de la cátedra (PDF y Word originales, NO modificar) |
+| (raíz: `src/`, `package.json`, `index.html`, ...) | Código fuente (React + TypeScript + Firebase) - SPA en la raíz del repo para el deploy |
+| `PROYECTO/ETAPA-1-IDEA/` a `PROYECTO/ETAPA-8-DOCUMENTACION/` | Una carpeta por etapa (MD + Word por presentación) |
+| `PROYECTO/CONTEXTO/CONTEXTO.md` | Registro continuo de todo lo que hacemos |
+| `PROYECTO/DOCUMENTACION/` | Material de la cátedra (PDF y Word originales, NO modificar) |
 
 ## Reglas obligatorias
 
@@ -43,12 +43,12 @@
 - El Word se genera a partir del contenido del MD de la etapa.
 
 ## Estilo de trabajo
-- Trabajar sobre `PROYECTO/` para el código.
+- Trabajar sobre la raíz (`src/`) para el código.
 - Usar npm/npx para inicializar y ejecutar la app.
 - Mantener el código limpio y comentado donde haga falta (las reglas de la cátedra lo requieren para documentación).
-- No cerrar sesión sin actualizar `CONTEXTO/CONTEXTO.md`.
+- No cerrar sesión sin actualizar `PROYECTO/CONTEXTO/CONTEXTO.md`.
 
 ## Verificación antes de finalizar
 - Correr `npm run build` (o el comando de build del proyecto) antes de cada commit de código.
 - Correr `npm run lint` si está configurado.
-- Confirmar que CONTEXTO.md está actualizado antes de terminar.
+- Confirmar que CONTEXTO.md (`PROYECTO/CONTEXTO/CONTEXTO.md`) está actualizado antes de terminar.
