@@ -13,6 +13,17 @@
 ### Próximos pasos
 - Mejora visual 18: Toast al agregar (consultar al usuario antes de avanzar).
 
+## 2026-09-12 - Despliegue: repo GitHub conectado
+
+### Qué se hizo
+- Creado repositorio en GitHub: `samelit-spect/seminario-proyecto` (https://github.com/samelit-spect/seminario-proyecto).
+- Commit de cambios pendientes (contador de visitas, DOCUMENTACION/ agregada).
+- Conectado remote `origin` y push inicial de `main`.
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Desplegar en Netlify (import desde GitHub, base directory `PROYECTO`, build `npm run build`, publish `dist`, variables de entorno `VITE_FIREBASE_*`).
+
 ## 2026-09-10 - Mejora visual 17: Botón de WhatsApp flotante
 
 ### Qué se hizo
