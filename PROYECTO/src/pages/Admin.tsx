@@ -10,6 +10,7 @@ import {
   leerProductos,
 } from '../services/productosService'
 import { cambiarEstadoPedido, usePedidosConRecarga } from '../services/pedidosService'
+import { leerVisitas } from '../services/visitasService'
 import type { EstadoPedido, Producto } from '../types'
 
 const precioFormateado = (n: number) =>
@@ -68,6 +69,11 @@ export default function Admin() {
     .reduce((acc, p) => acc + p.total, 0)
   const enStock = productos.filter((p) => p.stock > 0).length
   const stockBajo = productos.filter((p) => p.stock > 0 && p.stock <= 5)
+  const { total: visitasTotal, ultimos7: visitas7 } = leerVisitas()
+  const maxVisitas = Math.max(...visitas7.map((v) => v.visitas), 1)
+
+  const diaCorto = (ts: number) =>
+    new Date(ts).toLocaleDateString('es-AR', { weekday: 'short' }).replace('.', '')
 
   const menu: { id: Vista; label: string; icon: string }[] = [
     { id: 'dashboard', label: 'Dashboard', icon: 'M4 13h6V4H4v9zm0 7h6v-5H4v5zm10 0h6v-9h-6v9zm0-16v5h6V4h-6z' },
@@ -131,6 +137,40 @@ export default function Admin() {
                     </Reveal>
                   ))}
                 </div>
+
+                {/* Visitas de los últimos 7 días */}
+                <Reveal delay={280} className="rounded-2xl border border-wood-100 bg-white p-7">
+                  <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+                    <div>
+                      <h2 className="font-display text-2xl text-coal-950">Visitas del sitio</h2>
+                      <p className="mt-1 text-sm text-coal-50">Últimos 7 días</p>
+                    </div>
+                    <p className="font-display text-3xl font-bold text-wood-700">
+                      {visitasTotal.toLocaleString('es-AR')}
+                      <span className="ml-2 text-sm font-normal text-coal-50">visitas totales</span>
+                    </p>
+                  </div>
+
+                  <div className="flex h-40 items-end gap-3">
+                    {visitas7.map((v) => (
+                      <div key={v.fecha} className="group flex h-full flex-1 flex-col items-center justify-end gap-2">
+                        <span className="text-xs font-semibold text-coal-950 opacity-0 transition-opacity group-hover:opacity-100">
+                          {v.visitas}
+                        </span>
+                        <div
+                          className={`w-full rounded-t-lg transition-all duration-500 group-hover:brightness-110 ${
+                            v.visitas === maxVisitas && v.visitas > 0
+                              ? 'bg-gradient-to-t from-wood-600 to-wood-400'
+                              : 'bg-wood-100'
+                          }`}
+                          style={{ height: `${Math.max((v.visitas / maxVisitas) * 100, v.visitas > 0 ? 8 : 3)}%` }}
+                          title={`${v.visitas} visitas`}
+                        />
+                        <span className="text-xs capitalize text-coal-50">{diaCorto(v.fecha)}</span>
+                      </div>
+                    ))}
+                  </div>
+                </Reveal>
 
                 <div className="grid gap-6 lg:grid-cols-2">
                   {/* Pedidos recientes */}

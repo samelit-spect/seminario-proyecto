@@ -2,6 +2,17 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-10 - Mejora visual 16: Contador de visitas
+
+### Qué se hizo
+- Creado `src/services/visitasService.ts`: registra una visita por día en localStorage (`techstore_visitas`), poda datos >60 días y expone `leerVisitas()` (total + últimos 7 días incluyendo días sin visitas).
+- `App.tsx`: componente `VisitasTracker` registra una visita en cada cambio de ruta.
+- `Admin.tsx` (Dashboard): nueva tarjeta "Visitas del sitio" con **total de visitas y gráfico de barras** de los últimos 7 días (barra destacada en degradado madera el día pico, tooltips con cantidad al hover y días de la semana).
+- **Verificado:** `npm run build` OK.
+
+### Próximos pasos
+- Mejora visual 18: Toast al agregar (consultar al usuario antes de avanzar).
+
 ## 2026-09-10 - Mejora visual 17: Botón de WhatsApp flotante
 
 ### Qué se hizo
