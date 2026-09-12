@@ -28,16 +28,16 @@ export default function Preloader() {
 
         <span className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-wood-300 via-wood-500 to-wood-900 text-chalk shadow-2xl shadow-wood-900/40">
           <svg className="h-9 w-9" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
           </svg>
         </span>
       </div>
 
-      <p className="mt-8 animate-fade-up font-display text-2xl tracking-wide text-chalk" style={{ animationDelay: '150ms', animationDuration: '0.8s' }}>
-        Tech<span className="text-wood-300">Store</span>
+      <p className="mt-8 animate-fade-up font-display text-2xl font-extrabold tracking-wide text-chalk" style={{ animationDelay: '150ms', animationDuration: '0.8s' }}>
+        Todo<span className="text-wood-300">EnUno</span>
       </p>
       <p className="mt-2 animate-fade-up text-xs uppercase tracking-[0.35em] text-chalk/50" style={{ animationDelay: '300ms' }}>
-        Tecnología esencial
+        Todo en un solo lugar
       </p>
     </div>
   )

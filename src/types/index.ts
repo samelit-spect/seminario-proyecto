@@ -1,4 +1,4 @@
-// Tipos de dominio de TechStore
+// Tipos de dominio de TodoEnUno
 
 export interface Producto {
   id: string

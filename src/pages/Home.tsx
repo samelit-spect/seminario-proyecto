@@ -16,37 +16,37 @@ export default function Home() {
   return (
     <div>
       {/* ===== Hero ===== */}
-      <section className="relative flex min-h-screen items-center overflow-hidden bg-onix text-chalk">
+      <section className="relative flex min-h-screen items-center overflow-hidden bg-gradient-to-br from-cream-100 via-cream to-cream-50 text-coal-950">
         <div className="absolute inset-0 bg-grain opacity-40" />
-        <div className="absolute -left-24 top-1/4 h-96 w-96 animate-float rounded-full bg-wood-700/40 blur-3xl" />
+        <div className="absolute -left-24 top-1/4 h-96 w-96 animate-float rounded-full bg-wood-300/40 blur-3xl" />
         <div className="absolute -right-16 bottom-1/4 h-80 w-80 rounded-full bg-wood-500/20 blur-3xl" />
 
         <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-14 px-6 py-28 md:grid-cols-2">
           <div>
-            <p className="animate-fade-up text-sm uppercase tracking-[0.35em] text-wood-300">
-              Tecnología esencial
+            <p className="animate-fade-up text-sm font-semibold uppercase tracking-[0.35em] text-wood-600">
+              La tienda de todo
             </p>
-            <h1 className="mt-5 animate-fade-up font-display text-5xl leading-tight md:text-7xl" style={{ animationDelay: '120ms' }}>
-              Elegancia y
+            <h1 className="mt-5 animate-fade-up font-display text-5xl font-extrabold leading-tight md:text-7xl" style={{ animationDelay: '120ms' }}>
+              Encontrá todo
               <br />
-              <span className="text-gradient italic">tecnología</span>
+              <span className="text-gradient">lo que buscás</span>
               <br />
               en un solo lugar
             </h1>
-            <p className="mt-6 max-w-md animate-fade-up text-chalk/70 md:text-lg" style={{ animationDelay: '240ms' }}>
-              Descubrí una selección curada de productos de electrónica con diseño premium, calidad garantizada y atención personalizada.
+            <p className="mt-6 max-w-md animate-fade-up text-coal-900/70 md:text-lg" style={{ animationDelay: '240ms' }}>
+              Tecnología, hogar, moda, deportes y mucho más. Variedad real, precios justos y envíos a todo el país.
             </p>
             <div className="mt-9 flex animate-fade-up items-center gap-4" style={{ animationDelay: '360ms' }}>
               <Link
                 to="/catalogo"
-                className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-7 py-3.5 font-medium shadow-lg shadow-wood-900/30 transition-all duration-300 hover:shadow-xl hover:brightness-110"
+                className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-7 py-3.5 font-semibold text-chalk shadow-lg shadow-wood-900/30 transition-all duration-300 hover:shadow-xl hover:brightness-110"
               >
                 Explorar catálogo
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Link>
               <Link
                 to="/nosotros"
-                className="text-sm text-chalk/70 underline-offset-4 transition-colors duration-300 hover:text-chalk hover:underline"
+                className="text-sm font-medium text-coal-900/70 underline-offset-4 transition-colors duration-300 hover:text-coal-950 hover:underline"
               >
                 Conocé más
               </Link>
@@ -54,21 +54,21 @@ export default function Home() {
           </div>
 
           <div className="relative hidden animate-zoom-in md:block">
-            <Parallax velocidad={0.18} className="overflow-hidden rounded-[2rem] shadow-2xl shadow-wood-900/40">
+            <Parallax velocidad={0.18} className="overflow-hidden rounded-[2rem] shadow-2xl shadow-wood-900/20">
               <img
-                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=900&q=80"
-                alt="Reloj premium"
+                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=900&q=80"
+                alt="Tienda general"
                 className="h-[520px] w-full scale-110 object-cover transition-transform duration-[1.5s] hover:scale-125"
               />
             </Parallax>
-            <div className="absolute -bottom-6 -left-6 animate-fade-up rounded-2xl bg-chalk px-6 py-4 text-onix shadow-2xl" style={{ animationDelay: '500ms' }}>
+            <div className="absolute -bottom-6 -left-6 animate-fade-up rounded-2xl bg-white px-6 py-4 text-coal-950 shadow-2xl" style={{ animationDelay: '500ms' }}>
               <p className="font-display text-2xl font-bold text-wood-700">+450</p>
               <p className="text-sm text-coal-50">clientes satisfechos</p>
             </div>
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float text-chalk/40">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float text-coal-900/40">
           <svg className="h-6 w-6 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
           </svg>
@@ -142,19 +142,20 @@ export default function Home() {
       <FAQ />
 
       {/* ===== CTA final ===== */}
-      <section className="relative overflow-hidden bg-onix py-24 text-center text-chalk">
-        <div className="absolute inset-0 bg-grain opacity-40" />
-        <div className="absolute left-1/4 top-0 h-64 w-64 animate-float rounded-full bg-wood-700/30 blur-3xl" />
+      <section className="relative overflow-hidden bg-gradient-to-r from-wood-600 via-wood-500 to-wood-700 py-24 text-center text-chalk">
+        <div className="absolute inset-0 bg-grain opacity-20" />
+        <div className="absolute -left-16 top-0 h-64 w-64 animate-float rounded-full bg-white/10 blur-3xl" />
+        <div className="absolute right-0 bottom-0 h-56 w-56 rounded-full bg-white/10 blur-3xl" />
         <Reveal className="relative z-10 mx-auto max-w-2xl px-6">
-          <h2 className="font-display text-4xl md:text-5xl">
-            ¿Listo para <span className="text-gradient italic">renovar</span> tu tecnología?
+          <h2 className="font-display text-4xl font-extrabold md:text-5xl">
+            ¿Listo para encontrar <span className="text-white underline decoration-cream-200/50 underline-offset-8">todo lo que buscás</span>?
           </h2>
-          <p className="mt-4 text-chalk/70">
+          <p className="mt-4 text-chalk/80">
             Comprá online con retiro en el local o envío a tu puerta.
           </p>
           <Link
             to="/catalogo"
-            className="mt-8 inline-block rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-8 py-4 font-medium shadow-xl shadow-wood-900/40 transition-all duration-300 hover:brightness-110 hover:shadow-2xl"
+            className="mt-8 inline-block rounded-full bg-chalk px-8 py-4 font-bold text-wood-700 shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
           >
             Comprar ahora
           </Link>

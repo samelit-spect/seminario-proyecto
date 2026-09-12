@@ -1,5 +1,5 @@
 const NUMERO_WHATSAPP = '5493834567890'
-const MENSAJE = 'Hola TechStore, tengo una consulta sobre un producto.'
+const MENSAJE = 'Hola TodoEnUno, tengo una consulta sobre un producto.'
 
 export default function BotonWhatsapp() {
   return (

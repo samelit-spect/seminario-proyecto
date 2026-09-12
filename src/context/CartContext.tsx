@@ -22,7 +22,7 @@ interface CartContextValue {
 
 export const CUPONES: Record<string, CuponAplicado['cupon']> = {
   BIENVENIDO10: { codigo: 'BIENVENIDO10', tipo: 'porcentaje', valor: 10, descripcion: '10% de descuento' },
-  TECNOSTORE15: { codigo: 'TECNOSTORE15', tipo: 'porcentaje', valor: 15, descripcion: '15% de descuento' },
+  TODOENUNO15: { codigo: 'TODOENUNO15', tipo: 'porcentaje', valor: 15, descripcion: '15% de descuento' },
   AHORRO5K: { codigo: 'AHORRO5K', tipo: 'fijo', valor: 5000, descripcion: '$5.000 de descuento' },
 }
 

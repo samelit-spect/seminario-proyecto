@@ -98,7 +98,7 @@ export default function Catalogo() {
           <p className="text-sm uppercase tracking-[0.3em] text-wood-600">Descubrí</p>
           <h1 className="mt-2 font-display text-5xl text-coal-950">Catálogo</h1>
           <p className="mt-3 max-w-xl text-coal-50">
-            {productos.length} productos disponibles — tecnología esencial con diseño premium.
+            {productos.length} productos disponibles — encontrá lo que necesitás en un solo lugar.
           </p>
         </header>
 

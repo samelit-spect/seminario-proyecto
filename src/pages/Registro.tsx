@@ -39,17 +39,16 @@ export default function Registro() {
   }
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-onix px-6 pt-24">
-      <div className="absolute inset-0 bg-grain opacity-40" />
-      <div className="absolute -left-16 top-1/4 h-72 w-72 animate-float rounded-full bg-wood-700/30 blur-3xl" />
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-cream-100 via-cream to-cream-50 px-6 pt-24">
+      <div className="absolute -left-16 top-1/4 h-72 w-72 animate-float rounded-full bg-wood-300/30 blur-3xl" />
       <div className="absolute -right-16 bottom-1/4 h-72 w-72 rounded-full bg-wood-500/20 blur-3xl" />
 
       <div className="relative z-10 w-full max-w-md">
-        <Breadcrumb oscuro items={[{ label: 'Registrarse' }]} className="mb-8 text-center" />
-        <div className="animate-zoom-in rounded-3xl border border-cream/10 bg-white p-9 shadow-2xl">
+        <Breadcrumb items={[{ label: 'Registrarse' }]} className="mb-8 text-center" />
+        <div className="animate-zoom-in rounded-3xl border border-wood-100 bg-white p-9 shadow-2xl">
           <div className="mb-7 text-center">
-            <Link to="/" className="font-display text-2xl text-coal-950">
-              Tech<span className="text-wood-600">Store</span>
+            <Link to="/" className="font-display text-2xl font-extrabold text-coal-950">
+              Todo<span className="text-wood-500">EnUno</span>
             </Link>
             <h1 className="mt-4 font-display text-3xl text-coal-950">Creá tu cuenta</h1>
             <p className="mt-2 text-sm text-coal-50">

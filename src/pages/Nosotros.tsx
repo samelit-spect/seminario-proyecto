@@ -7,24 +7,24 @@ import Breadcrumb from '../components/ui/Breadcrumb'
 export default function Nosotros() {
   const valores = [
     { t: 'Calidad', d: 'Cada producto pasa rigurosos controles antes de llegar a tus manos.', icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
-    { t: 'Diseño', d: 'Seleccionamos artículos con estética cuidada y acabados premium.', icon: 'M12 3l1.9 5.8H20l-4.9 3.6 1.9 5.8-5-3.6-5 3.6 1.9-5.8L4 8.8h6.1z' },
+    { t: 'Variedad', d: 'Un catálogo enorme que cubre cada categoría y necesidad del hogar.', icon: 'M4 6h16M4 12h16M4 18h16' },
     { t: 'Confianza', d: 'Garantía oficial y atención personalizada antes y después de la compra.', icon: 'M12 2a7 7 0 00-7 7v6H3v5h18v-5h-2V9a7 7 0 00-7-7z' },
   ]
 
   return (
     <div className="bg-cream">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-onix pb-24 pt-40 text-chalk">
-        <div className="absolute inset-0 bg-grain opacity-40" />
-        <div className="absolute right-0 top-0 h-80 w-80 animate-float rounded-full bg-wood-700/30 blur-3xl" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-cream-100 via-cream to-cream-50 pb-24 pt-40 text-coal-950">
+        <div className="absolute -right-0 top-0 h-80 w-80 animate-float rounded-full bg-wood-300/30 blur-3xl" />
+        <div className="absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-wood-500/20 blur-3xl" />
         <div className="relative z-10 mx-auto max-w-7xl px-6">
-          <Breadcrumb oscuro items={[{ label: 'Nosotros' }]} className="mb-10" />
-          <p className="animate-fade-up text-sm uppercase tracking-[0.35em] text-wood-300">Nuestra historia</p>
-          <h1 className="mt-4 max-w-3xl animate-fade-up font-display text-5xl leading-tight md:text-6xl" style={{ animationDelay: '120ms' }}>
-            Tecnología con <span className="text-gradient italic">alma</span> y diseño
+          <Breadcrumb items={[{ label: 'Nosotros' }]} className="mb-10" />
+          <p className="animate-fade-up text-sm font-semibold uppercase tracking-[0.35em] text-wood-600">Nuestra historia</p>
+          <h1 className="mt-4 max-w-3xl animate-fade-up font-display text-5xl font-extrabold leading-tight md:text-6xl" style={{ animationDelay: '120ms' }}>
+            Todo en un <span className="text-gradient">solo lugar</span>, pensado para vos
           </h1>
-          <p className="mt-6 max-w-xl animate-fade-up text-chalk/70 md:text-lg" style={{ animationDelay: '240ms' }}>
-            TechStore nació en Tinogasta con una idea simple: acercar tecnología de calidad a nuestra comunidad, con un trato cercano y una estética que refleja el buen gusto.
+          <p className="mt-6 max-w-xl animate-fade-up text-coal-900/70 md:text-lg" style={{ animationDelay: '240ms' }}>
+            TodoEnUno nació en Tinogasta con una idea simple: que encuentres todo lo que necesitás sin recorrer mil tiendas, con trato cercano y productos de calidad garantizada.
           </p>
         </div>
       </section>
@@ -46,7 +46,7 @@ export default function Nosotros() {
             Cuidamos cada detalle, <span className="text-gradient italic">de principio a fin</span>
           </h2>
           <p className="mt-6 leading-relaxed text-coal-50">
-            Somos un equipo apasionado por la tecnología y el diseño. Creemos que comprar un dispositivo no debería ser una experiencia fría: por eso acompañamos a cada cliente a elegir el producto ideal según sus necesidades, con asesoramiento real y seguimiento post-venta.
+            Somos un equipo apasionado por facilitar las compras del día a día. Creemos que comprar no debería ser un viaje por diez tiendas: por eso reunimos todas las categorías en un solo lugar, con asesoramiento real y seguimiento post-venta.
           </p>
           <p className="mt-4 leading-relaxed text-coal-50">
             Nuestro objetivo es que cada compra se sienta personal, desde la primera consulta hasta que el producto llega a tu puerta.
@@ -90,13 +90,13 @@ export default function Nosotros() {
       {/* CTA */}
       <section className="bg-grain py-20 text-center">
         <Reveal>
-          <h2 className="font-display text-4xl text-coal-950">¿Tenés alguna consulta?</h2>
+          <h2 className="font-display text-4xl font-extrabold text-coal-950">¿Tenés alguna consulta?</h2>
           <p className="mx-auto mt-3 max-w-md text-coal-50">
-            Escribinos y te ayudamos a encontrar el producto perfecto para vos.
+            Escribinos y te ayudamos a encontrar lo que necesitás.
           </p>
           <a
-            href="mailto:ventas@techstore.com"
-            className="mt-8 inline-block rounded-full bg-onix px-8 py-4 font-medium text-chalk shadow-lg transition-all duration-300 hover:bg-wood-700 hover:shadow-xl"
+            href="mailto:hola@todoenuno.com"
+            className="mt-8 inline-block rounded-full bg-gradient-to-r from-wood-500 to-wood-700 px-8 py-4 font-medium text-chalk shadow-lg transition-all duration-300 hover:shadow-xl hover:brightness-110"
           >
             Contactanos
           </a>

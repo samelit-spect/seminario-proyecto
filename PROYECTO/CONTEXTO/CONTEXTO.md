@@ -2,6 +2,29 @@
 
 > Registro continuo de todo lo que hacemos en el proyecto. Actualizar después de cada sesión de trabajo.
 
+## 2026-09-12 - Rediseño de marca: de TechStore a TodoEnUno
+
+### Decisión
+- El usuario pidió pasar de una tienda de electrónica oscura y elegante a una **tienda general** clara, con tipografía redondeada y más interactiva.
+- Elecciones: nombre **TodoEnUno**, paleta **clara y cálida (naranja/arena)**, tipografía **Nunito**.
+
+### Qué se hizo
+- `src/index.css`: nueva paleta (crema/blanco + naranja arena) y Nunito en `--font-display` y `--font-sans`; ajustados `.text-gradient`, `.bg-grain` y `.field` al naranja; dark mode recalibrado a tonos cálidos.
+- `index.html`: título "TodoEnUno - Tienda Online". `public/favicon.svg`: ícono general de bolsa de compras.
+- `Navbar.tsx`: marca TodoEnUno, ícono de bolsa y **navegación adaptativa** (texto oscuro sobre hero claro, toma fondo oscuro al scrollear).
+- `Footer`, `Preloader`, `BotonWhatsapp`, `Testimonios`, `Nosotros`, `Login`, `Registro`, `Admin`, `types`: todos los textos rebrandeados a TodoEnUno con copys de tienda general; Login/Registro y hero de Nosotros ahora con fondo claro cálido.
+- `Home.tsx`: hero claro y general ("Encontrá todo lo que buscás") + CTA final en degradado naranja.
+- `src/data/productos.ts`: catálogo demo ampliado a 12 productos en 6 categorías (Tecnología, Accesorios, Moda, Hogar, Cocina, Deportes).
+- `ProductCard.tsx`: botón flotante "Agregar" al carrito al pasar el mouse (más interactivo).
+- Cupón de descuento renombrado a `TODOENUNO15`.
+
+### Problemas encontrados y soluciones
+- La navbar usaba texto blanco sobre el hero oscuro: al aclarar el hero había que adaptar colores por scroll.
+- Los íconos de rayo (tecnología) fueron reemplazados por bolsa de compras en todos los componentes.
+
+### Próximos pasos
+- Revisar visualmente en `npm run dev` (y en Netlify tras push) y ajustar detalles de color/espaciado si el usuario lo pide.
+
 ## 2026-09-12 - Reestructuración del repo para Netlify
 
 ### Qué se hizo

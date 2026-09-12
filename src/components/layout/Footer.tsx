@@ -9,13 +9,13 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-wood-300 via-wood-500 to-wood-900 text-chalk">
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
               </span>
-              <span className="font-display text-xl">Tech<span className="text-wood-300">Store</span></span>
+              <span className="font-display text-xl font-extrabold">Todo<span className="text-wood-300">EnUno</span></span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-chalk/60">
-              Tecnología esencial con un toque de elegancia. Calidad, diseño y garantía en cada producto.
+              La tienda general donde encontrás de todo en un solo lugar. Calidad, variedad y garantía en cada categoría.
             </p>
           </div>
 
@@ -41,14 +41,14 @@ export default function Footer() {
             <h4 className="mb-4 font-display text-lg text-wood-300">Contacto</h4>
             <ul className="space-y-2 text-sm text-chalk/60">
               <li>Tinogasta, Catamarca</li>
-              <li>ventas@techstore.com</li>
+              <li>hola@todoenuno.com</li>
               <li>+54 9 3837 00 0000</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 border-t border-chalk/10 pt-6 text-center text-xs text-chalk/40">
-          © {new Date().getFullYear()} TechStore — Seminario Tecnicatura en Desarrollo de Software. Todos los derechos reservados.
+          © {new Date().getFullYear()} TodoEnUno — Seminario Tecnicatura en Desarrollo de Software. Todos los derechos reservados.
         </div>
       </div>
     </footer>

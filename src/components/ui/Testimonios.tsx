@@ -6,14 +6,14 @@ const TESTIMONIOS = [
     rol: 'Compró un Smartwatch GT4',
     iniciales: 'MF',
     texto:
-      'Excelente atención desde el primer mensaje. El reloj llegó impecable y mucho antes de lo esperado. ¡La calidad es idéntica a la de las fotos!',
+      'Excelente atención desde el primer mensaje. El producto llegó impecable y mucho antes de lo esperado. ¡La calidad es idéntica a la de las fotos!',
   },
   {
     nombre: 'Jorge Ramírez',
-    rol: 'Compró auriculares inalámbricos',
+    rol: 'Cliente hace 2 años',
     iniciales: 'JR',
     texto:
-      'Recomendé TechStore a toda mi familia. Buenos precios, garantía real y te asesoran antes de venderte cualquier cosa. Un lujo comprar acá.',
+      'Recomendé TodoEnUno a toda mi familia. Buenos precios, garantía real y te asesoran antes de venderte cualquier cosa. Un lujo comprar acá.',
   },
   {
     nombre: 'Lucía Gómez',
@@ -24,10 +24,10 @@ const TESTIMONIOS = [
   },
   {
     nombre: 'Diego Sosa',
-    rol: 'Compró un teclado mecánico',
+    rol: 'Compró para su cocina',
     iniciales: 'DS',
     texto:
-      'Había leído sobre el tema oscuro y la verdad quedó espectacular. El pedido llegó bien embalado y con factura. 100% confiable.',
+      'Encontré todo lo que necesitaba sin salir de la página: desde la bacha hasta electrodomésticos. El pedido llegó bien embalado y con factura. 100% confiable.',
   },
 ]
 

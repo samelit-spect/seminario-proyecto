@@ -1,6 +1,6 @@
 import Reveal from './Reveal'
 
-const MARCAS = ['Apple', 'Samsung', 'Sony', 'Xiaomi', 'HP', 'Logitech', 'Lenovo', 'Motorola', 'JBL', 'Philips']
+const MARCAS = ['Samsung', 'Nike', 'Apple', 'Adidas', 'Sony', 'Philips', 'Whirlpool', 'Xiaomi', 'Lenovo', 'Nestlé']
 
 export default function Marcas() {
   const lista = [...MARCAS, ...MARCAS]

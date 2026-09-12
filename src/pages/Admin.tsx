@@ -88,7 +88,7 @@ export default function Admin() {
         <Breadcrumb items={[{ label: 'Panel admin' }]} className="mb-8" />
         <header className="mb-10">
           <p className="text-sm uppercase tracking-[0.3em] text-wood-600">Panel de administración</p>
-          <h1 className="mt-2 font-display text-5xl text-coal-950">TechStore Admin</h1>
+          <h1 className="mt-2 font-display text-5xl font-extrabold text-coal-950">TodoEnUno Admin</h1>
         </header>
 
         <div className="flex flex-col gap-10 md:flex-row">
